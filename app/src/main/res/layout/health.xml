@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/HealthIntro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="All students in Germany must have a health insurance (from a private or a public health insurance company)."/>
+
+    <TextView
+        android:id="@+id/BasicInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Basic information about health insurance in Germany: https://www.uni-ulm.de/en/io/degree-phd/welcome/authorities-and-insurances/health-insurance/"
+        android:autoLink="web"
+        app:layout_constraintTop_toBottomOf="@id/HealthIntro"
+        android:paddingTop="8dp"
+        />
+
+    <TextView
+        android:id="@+id/PublicList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="List of Public Health Insurances:
+        AOK: https://www.aok.de/pk/uni/
+        Techniker Krankenkasse (TK): https://www.tk.de/en
+        Barmer GEK: https://www.barmer.de/en/
+        Deutsche Angestellten Krankenkasse (DAK): www.dak.de"
+        app:layout_constraintTop_toBottomOf="@id/BasicInfo"
+        android:paddingTop="8dp"
+        android:autoLink="web"
+         />
+
+
+    <TextView
+        android:id="@+id/PrivateList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="List of Private Health Insurances:
+        Continentale: https://www.continentale.de/web/info-siebel-bittner
+        Debeka: https://www.debeka.de/produkte/versichern/krankenversicherung/kv-studenten/index.html
+        Barmenia: https://www.barmenia.de/
+        HanseMerkur: https://www.hansemerkur.de/"
+        app:layout_constraintTop_toBottomOf="@id/PublicList"
+        android:paddingTop="8dp"
+        android:autoLink="web"
+        />
+
+</android.support.constraint.ConstraintLayout>
