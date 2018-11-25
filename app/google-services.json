@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "859724312183",
+    "firebase_url": "https://hsulmnewstudentinfoapp.firebaseio.com",
+    "project_id": "hsulmnewstudentinfoapp",
+    "storage_bucket": "hsulmnewstudentinfoapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:859724312183:android:03b73a43385435e7",
+        "android_client_info": {
+          "package_name": "edu.rosehulman.jonesjg1.hs_ulmnewstudentinfoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "859724312183-k1tuop45pga4fvfhesq8drea05d16jb2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.rosehulman.jonesjg1.hs_ulmnewstudentinfoapp",
+            "certificate_hash": "39a104e7bbbdefc78ccff0da3fe77fc857153a79"
+          }
+        },
+        {
+          "client_id": "859724312183-k6tcee0efimffrhjirnm04cdmnqgnmvc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoKUm9g64uTRZ8sedus7dS3qgB-qQUhmY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "859724312183-k6tcee0efimffrhjirnm04cdmnqgnmvc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
