@@ -17,5 +17,6 @@ public class HealthFrame extends AppCompatActivity {
                 "Basic information about health insurance in Germany </a>";
         textView.setText(Html.fromHtml(text, Html.FROM_HTML_MODE_COMPACT));
 
+
     }
 }
