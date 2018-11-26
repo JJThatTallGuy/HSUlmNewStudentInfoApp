@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:text="Basic information about health insurance in Germany: https://www.uni-ulm.de/en/io/degree-phd/welcome/authorities-and-insurances/health-insurance/"
         android:autoLink="web"
+        android:linksClickable="true"
         app:layout_constraintTop_toBottomOf="@id/HealthIntro"
         android:paddingTop="8dp"
         />
@@ -32,6 +33,7 @@
         Deutsche Angestellten Krankenkasse (DAK): www.dak.de"
         app:layout_constraintTop_toBottomOf="@id/BasicInfo"
         android:paddingTop="8dp"
+        android:linksClickable="true"
         android:autoLink="web"
          />
 
@@ -48,6 +50,7 @@
         app:layout_constraintTop_toBottomOf="@id/PublicList"
         android:paddingTop="8dp"
         android:autoLink="web"
+        android:linksClickable="true"
         />
 
 </android.support.constraint.ConstraintLayout>
