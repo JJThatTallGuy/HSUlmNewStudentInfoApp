@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/login_fragment"
     tools:context="edu.rosehulman.jonesjg1.hs_ulmnewstudentinfoapp.LoginFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -14,10 +15,16 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"/>
 
-    <Button
-        android:id="@+id/signout"
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="sign out"/>
+        android:layout_above="@+id/sign_in_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="41dp"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:text="In order to use the messaging feature, you must login" />
+
 
 </RelativeLayout>
