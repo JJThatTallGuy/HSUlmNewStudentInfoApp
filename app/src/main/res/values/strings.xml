@@ -3,29 +3,36 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
     <string name="action_settings">Settings</string>
+
     <string name="job_header">Earning money during your studies\n</string>
     <string name="job_intro">There are many ways of earning money while you study, for example as waiting staff, academic assistants or private tutors. A knowledge of German will improve your chances of finding a part-time job. But please be aware of the legal regulations.</string>
+
     <string name="searching_job">\nSearching for a job:</string>
     <string name="job_description">The regional offices of the Federal Employment Agency often have a job exchange for students. At larger higher education institutions you can find job vacancy listings at student services. Online job exchanges can be found on the websites
         of higher education institutions and student services. Sometimes a look at the notice board at your higher education institution or the classified ads in the local and regional papers is sufficient .</string>
+
     <string name="academic_assistants">\nAcademic assistants:</string>
     <string name="academic_description">Some students work as academic assistants at their university. They may for example supervise the library, lead tutorials or research literature for professors. Academic assistant jobs are a good addition to a degree programme. If you are interested in one
         of these jobs, you should ask about vacancies at the administrative office of your institute and keep an eye on the notice boards at your higher education institution.</string>
+
     <string name="outside_institution">\nOutside your higher education institution: </string>
     <string name="outside_institution_description">Typical off-campus student jobs include waiting tables, working at trade fairs, babysitting and courier services. Teacher training students often give tuition, students in publishing work for newspapers: the ideal job will be in some way associated with your degree programme.\n</string>
+
     <string name="important">Important:</string>
     <string name="important_info">It is virtually impossible for students to fund their entire cost of living through side jobs. There are not very many jobs of this type for students on the German labour market – and working too much can needlessly extend your degree programme.
         Instead, we recommend that you make use of the recess period and ensure that you are financially secure through scholarships or with the help of your family.\n</string>
+
     <string name="tips">Tips:</string>
     <string name="tips_description">At Hochschule Ulm, there is a year event "Karriere Börse" normally during the last week of October. Students get the opportunity to meet and interact with their favorite companies. Job/internship searching students are strongly advised to visit the event, make direct job applications and ask questions directly.\n</string>
+
     <string name="job_links">Job Links:</string>
     <string name="link_notes">Some of the job links can be found below. You are strongly advised to also use some search engines e.g Google to make your search</string>
     <string name="link1">https://studierendenwerk-ulm.de/en/bafoeg-and-finances/part-time-work/</string>
     <string name="link2">https://de.indeed.com/</string>
     <string name="link3">https://www.arbeitsagentur.de/en/welcome</string>
     <string name="link4">https://www.jobmensa.de/</string>
+
     <string name="how_much_work">\nHow much are you allowed to work?</string>
     <string name="rules">As of August 2012 international students who do not come from the EU or EEA are allowed to work 120 full or 240 half days in a year. To do this they do not need authorisation from the Employment Agency, i.e. the German authorities.
         \n\nInternational students who do not come from the EU cannot go self employed or work freelance!
@@ -38,7 +45,18 @@
 
     <string name="title_activity_main">MainActivity</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="transport_connections">Transport Connections:</string>
+    <string name="transport_connections_description">\nThe Ulm University of Applied Sciences is ideally connected to local and national transport links.The Donau-Iller-Nahverkehrsbund-GmbH (DING) organises local public transport in and around Ulm. With your student ID card, you can travel for free on public transport throughout
+        the entire DING region, on weekdays from 6 pm and all day at the weekend or on bank holidays. What is more, your ID card gives you free bus travel between the stops "Örlinger Straße" and "Egertweg" (Line 4). This means, as a Ulm University of Applied Sciences​ student, you can travel for free between the Prittwitzstrasse campus and our site in Böfingen.
+        \nWhen you start the first semester of your studies at the  Ulm University of Applied Sciences​ and register your main residence as being in Ulm, you will receive a semester ticket for the DING region free of charge. For all subsequent semesters, the DING semester ticket for the entire network currently costs 116.50 € and is valid for one semester. </string>
 
+    <string name="semester_ticket">\nYou can get the semester ticket at the: </string>
+    <string name="semester_ticket_link">http://www.servicecenter-neue-mitte.de/swu-traffiti.html</string>
+
+    <string name="ding1">\nYou can find all other information about transport and the DING local and regional transport network at: </string>
+    <string name="ding_link1">https://www.ding.eu/</string>
+    <string name="ding2">\nIf you need to commute beyond the boundaries of the DING network, the neighbouring public transport companies offer inexpensive connecting semester tickets:</string>
+    <string name="ding_link2">https://www.naldo.de/tickets-und-preise/alle-fahrscheine/anschluss-semestertickets/</string>
+    <string name="ding_link3">https://www.bodo.de/tickets/fahrscheine-preise.html</string>
+    <string name="ding_link4">https://www.filsland.de/tickets-und-preise/student/anschluss-studiticket</string>
 </resources>

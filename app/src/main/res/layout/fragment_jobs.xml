@@ -6,7 +6,7 @@
 
     <TableLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap"
+        android:layout_height="wrap_content"
         android:stretchColumns="1">
         <!-- TODO: Update blank fragment layout -->
         <TextView
@@ -176,9 +176,6 @@
             android:text="@string/eu_description"
             android:textSize="16sp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
 
     </TableLayout>
 </ScrollView>
