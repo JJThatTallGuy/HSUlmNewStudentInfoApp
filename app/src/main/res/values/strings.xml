@@ -59,4 +59,6 @@
     <string name="ding_link2">https://www.naldo.de/tickets-und-preise/alle-fahrscheine/anschluss-semestertickets/</string>
     <string name="ding_link3">https://www.bodo.de/tickets/fahrscheine-preise.html</string>
     <string name="ding_link4">https://www.filsland.de/tickets-und-preise/student/anschluss-studiticket</string>
+
+    <string name="hello_blank_fragment">Hello Blank Fragment</string>
 </resources>
