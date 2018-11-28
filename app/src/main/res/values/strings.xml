@@ -7,6 +7,45 @@
     <string name="action_settings">Settings</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="city_laws"><br>In Germany there are strict laws which every resident must abide to.These laws varies between several sectors\n</br>
+
+
+        <br>
+            1.parking laws\nclick on this link for parking laws in ulm https://www.parken-in-ulm.de\n</br>
+        <br>
+            2.rundfunkbeitrag\nThere is usually a fee for Radio and Television services in Germany
+        click on this link for more info  https://www.rundfunkbeitrag.de\n</br>
+        <br>
+            3.Illegal downloading of movies in Germany\n for more info click on this link
+            https://www.evz.de/en/consumer-topics/illegal-downloading-in-germany\n</br>
+        <br>
+            4.Tax classes and laws\nYou can find here informations about the different tax classes in Germany https://steuerklassen.biz/ \n</br>
+        <br>
+            5. The Finanzamt is responsible for taxed related issues .Recalaimation of taxes for the previous year is done mostly in the first Quater of the following year. https://fa-ulm.fv-bwl.de/pb/,Lde/Startseite \n</br>
+
+
+
+
+    </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="funding"><br>In Germany these  are some scholarships and funding schemes available for students \n</br>
+    <br>
+        1.Bafög\nThis funding scheme is available to students from the European union.click for more info https://www.bafög.de\n</br>
+
+    <br>
+        2.Konrad Adenauer stiftung scholarship \nThis is a scholarship scheme for international students.click for more info
+        https://www.kas.de/who-are-we-looking-for-en-\n</br>
+        <br>
+            3.Kofi Annan MBA scholarship for developing countries \n This is a scholarship scheme for students from develping countries.click for more info
+        https://www.esmt.org/degree-programs/fees-and-financing/mba-scholarships\n</br>
+        <br>
+            4.Daad scholarship for Development related post-graduate courses\n A scholarship for post graduate studies .click for more info
+        https://www.daad.de/der-daad/unsere-aufgaben/entwicklungszusammenarbeit/foerderprogramme/hochschulen/infos/en/45192-development-related-postgraduate-courses-epos\n</br>
+        <br>
+            5.Erasmus Mundus Scholarship for international students\n For European and non European citizens .click for more info https://eacea.ec.europa.eu/sites/2007-2013/archiving\n</br>
+
+
+</string >
 </resources>
