@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1">
+
+        <TextView
+            android:id="@+id/transportConnections"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/transport_connections"
+            android:textSize="22sp"
+            android:textColor="@color/Teal"/>
+
+    <TextView
+        android:id="@+id/transportConnectionsDescriptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/transport_connections_description"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/semesterTicket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/semester_ticket"
+        android:textSize="22sp"
+        android:textColor="@color/Teal"/>
+
+    <TextView
+        android:id="@+id/semesterTicketLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/semester_ticket_link"
+        android:autoLink="web"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/ding_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ding1"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/dingLink1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ding_link1"
+        android:textColor="@color/Maroon"
+        android:autoLink="web"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/ding2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ding2"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/dingLink2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ding_link2"
+        android:textSize="16sp"
+        android:autoLink="web"
+        android:textColor="@color/Maroon"/>
+
+    <TextView
+        android:id="@+id/dingLink3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ding_link3"
+        android:textSize="16sp"
+        android:autoLink="web"
+        android:textColor="@color/Maroon"/>
+
+    <TextView
+        android:id="@+id/dingLink4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ding_link4"
+        android:textSize="16sp"
+        android:autoLink="web"
+        android:textColor="@color/Maroon"/>
+    </TableLayout>
+</ScrollView>

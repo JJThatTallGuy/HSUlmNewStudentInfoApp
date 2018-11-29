@@ -1,5 +1,6 @@
 package edu.rosehulman.jonesjg1.hs_ulmnewstudentinfoapp;
 
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -186,9 +187,9 @@ public class LoginFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        signOut();
         View rootview = inflater.inflate(R.layout.fragment_login, container, false);
         final com.google.android.gms.common.SignInButton signinButton = rootview.findViewById(R.id.sign_in_button);
-
         signinButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -197,18 +198,10 @@ public class LoginFragment extends Fragment {
         });
 
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this.getActivity());
-        if(account != null) {
-            signinButton.setVisibility(View.GONE);
-        }
 
-        Button signout = rootview.findViewById(R.id.signout);
-        signout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                signOut();
-                signinButton.setVisibility(View.VISIBLE);
-            }
-        });
+
+
+
         return rootview;
     }
 

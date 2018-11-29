@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1">
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:id="@+id/jobHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/job_header"
+            android:textColor="@color/Blue"
+            android:textSize="26sp" />
+
+        <TextView
+            android:id="@+id/jobIntro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/job_intro"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/how_much_work"
+            android:textColor="@color/Blue"
+            android:textSize="22sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rules"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/eu"
+            android:textColor="@color/Blue"
+            android:textSize="22sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/eu_description"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/searchingJob"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/searching_job"
+            android:textColor="@color/Teal"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/jobDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/job_description"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/academicAssistant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/academic_assistants"
+            android:textColor="@color/Teal"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/academicDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/academic_description"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/outsideInstitution"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/outside_institution"
+            android:textColor="@color/Teal"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/outsideInstitutionDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/outside_institution_description"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/important"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/important"
+            android:textColor="@color/Teal"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/importantInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/important_info"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tips"
+            android:textColor="@color/Teal"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tipsDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tips_description"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/jobLinks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/job_links"
+            android:textColor="@color/Teal"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/linkNotes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/link_notes"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/link1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/link1"
+            android:autoLink="web"
+            android:textColor="@color/Maroon"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/link2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/link2"
+            android:autoLink="web"
+            android:textColor="@color/Maroon"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/link3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/link3"
+            android:autoLink="web"
+            android:textColor="@color/Maroon"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/link4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/link4"
+            android:autoLink="web"
+            android:textColor="@color/Maroon"
+            android:textSize="16sp" />
+
+
+    </TableLayout>
+</ScrollView>
