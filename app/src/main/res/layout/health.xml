@@ -10,48 +10,127 @@
         android:id="@+id/HealthIntro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="All students in Germany must have a health insurance (from a private or a public health insurance company)."/>
+        android:text="Basic information:"
+        android:textColor="@color/Blue"
+        android:textSize="22sp"
+        />
 
     <TextView
         android:id="@+id/BasicInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Basic information about health insurance in Germany: https://www.uni-ulm.de/en/io/degree-phd/welcome/authorities-and-insurances/health-insurance/"
+        android:text="All students in Germany need health insurance. The following link has more information: https://www.uni-ulm.de/en/io/degree-phd/welcome/authorities-and-insurances/health-insurance/"
         android:autoLink="web"
         android:linksClickable="true"
         app:layout_constraintTop_toBottomOf="@id/HealthIntro"
-        android:paddingTop="8dp"
         />
 
     <TextView
         android:id="@+id/PublicList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="List of Public Health Insurances:
-        AOK: https://www.aok.de/pk/uni/
-        Techniker Krankenkasse (TK): https://www.tk.de/en
-        Barmer GEK: https://www.barmer.de/en/
-        Deutsche Angestellten Krankenkasse (DAK): www.dak.de"
+        android:text="List of Public Health Insurances:"
         app:layout_constraintTop_toBottomOf="@id/BasicInfo"
         android:paddingTop="8dp"
         android:linksClickable="true"
+        android:textColor="@color/Blue"
+        android:textSize="22sp"
         android:autoLink="web"
          />
-
+    <TextView
+        android:id="@+id/Pub1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AOK: https://www.aok.de/pk/uni/"
+        app:layout_constraintTop_toBottomOf="@id/PublicList"
+        android:paddingTop="8dp"
+        android:linksClickable="true"
+        android:autoLink="web"
+        />
+    <TextView
+        android:id="@+id/Pub2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Techniker Krankenkasse (TK): https://www.tk.de/en"
+        app:layout_constraintTop_toBottomOf="@id/Pub1"
+        android:paddingTop="8dp"
+        android:linksClickable="true"
+        android:autoLink="web"
+        />
+    <TextView
+        android:id="@+id/Pub3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Barmer GEK: https://www.barmer.de/en/"
+        app:layout_constraintTop_toBottomOf="@id/Pub2"
+        android:paddingTop="8dp"
+        android:linksClickable="true"
+        android:autoLink="web"
+        />
+    <TextView
+        android:id="@+id/Pub4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deutsche Angestellten Krankenkasse (DAK): www.dak.de"
+        app:layout_constraintTop_toBottomOf="@id/Pub3"
+        android:paddingTop="8dp"
+        android:linksClickable="true"
+        android:autoLink="web"
+        />
 
     <TextView
         android:id="@+id/PrivateList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="List of Private Health Insurances:
-        Continentale: https://www.continentale.de/web/info-siebel-bittner
-        Debeka: https://www.debeka.de/produkte/versichern/krankenversicherung/kv-studenten/index.html
-        Barmenia: https://www.barmenia.de/
-        HanseMerkur: https://www.hansemerkur.de/"
-        app:layout_constraintTop_toBottomOf="@id/PublicList"
-        android:paddingTop="8dp"
+        android:text="List of Private Health Insurances:"
+        app:layout_constraintTop_toBottomOf="@id/Pub4"
+        android:paddingTop="12dp"
         android:autoLink="web"
+        android:textColor="@color/Blue"
+        android:textSize="22sp"
         android:linksClickable="true"
         />
+    <TextView
+        android:id="@+id/Priv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Continentale: https://www.continentale.de/web/info-siebel-bittner"
+        app:layout_constraintTop_toBottomOf="@id/PrivateList"
+        android:paddingTop="8dp"
+        android:linksClickable="true"
+        android:autoLink="web"
+        />
+    <TextView
+        android:id="@+id/Priv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Debeka: https://www.debeka.de/produkte/versichern/krankenversicherung/kv-studenten/index.html"
+        app:layout_constraintTop_toBottomOf="@id/Priv1"
+        android:paddingTop="8dp"
+        android:linksClickable="true"
+        android:autoLink="web"
+        />
+    <TextView
+        android:id="@+id/Priv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Barmenia: https://www.barmenia.de/"
+        app:layout_constraintTop_toBottomOf="@id/Priv2"
+        android:paddingTop="8dp"
+        android:linksClickable="true"
+        android:autoLink="web"
+        />
+    <TextView
+        android:id="@+id/Priv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HanseMerkur: https://www.hansemerkur.de"
+        app:layout_constraintTop_toBottomOf="@id/Priv3"
+        android:paddingTop="8dp"
+        android:linksClickable="true"
+        android:autoLink="web"
+        />
+
+
 
 </android.support.constraint.ConstraintLayout>
