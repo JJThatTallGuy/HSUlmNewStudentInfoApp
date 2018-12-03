@@ -11,5 +11,5 @@
         android:layout_height="fill_parent"
         android:contentDescription="@string/app_name"
         android:scaleType="fitCenter"
-        app:srcCompat="@drawable/standorte_lageplan_ef" />
+        app:srcCompat="@mipmap/standorte_lageplan_ef" />
 </RelativeLayout>

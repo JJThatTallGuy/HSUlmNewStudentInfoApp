@@ -18,6 +18,9 @@
             android:id="@+id/lawsbutton"
 
             android:title="City Laws" />
+        <item
+            android:id="@+id/healthbutton"
+            android:title="Health Insurance"/>
     </group>
 
     <item android:title="Communicate">

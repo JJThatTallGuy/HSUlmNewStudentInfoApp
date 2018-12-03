@@ -32,7 +32,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class MainActivity extends AppCompatActivity
-        implements fundingFragment.OnFragmentInteractionListener,cityLawsFragment.OnFragmentInteractionListener,JobsFragment.OnFragmentInteractionListener,transportFragment.OnFragmentInteractionListener, ProfileFragment.OnFragmentInteractionListener,NavigationView.OnNavigationItemSelectedListener,LoginFragment.OnFragmentInteractionListener ,MessagingFragment.OnFragmentInteractionListener{
+        implements HealthInsuranceFragment.OnFragmentInteractionListener,EberhardstrasseMapFragmnet.OnFragmentInteractionListener,EinsteinMapFragment.OnFragmentInteractionListener,PritwitzstrasseMapFragment.OnFragmentInteractionListener,fundingFragment.OnFragmentInteractionListener,cityLawsFragment.OnFragmentInteractionListener,JobsFragment.OnFragmentInteractionListener,transportFragment.OnFragmentInteractionListener, ProfileFragment.OnFragmentInteractionListener,NavigationView.OnNavigationItemSelectedListener,LoginFragment.OnFragmentInteractionListener ,MessagingFragment.OnFragmentInteractionListener{
 
     private GoogleSignInAccount maccount;
 
@@ -181,11 +181,26 @@ public class MainActivity extends AppCompatActivity
 
 
         }
-//        else if(R.id.pritwasse_map){
-//            Prittwitzstrasse_Map_Frame Pmap = new Prittwitzstrasse_Map_Frame();
-//            ft.replace(R.id.content_main,Pmap,"Pritwasse map");
-//            ft.commit();
-//        }
+        else if(id==R.id.pritwasse_map){
+            PritwitzstrasseMapFragment Pmap = new PritwitzstrasseMapFragment();
+            ft.replace(R.id.content_main,Pmap,"Pritwasse map");
+            ft.commit();
+        }
+        else if(id ==R.id.eberhardstrasse_map){
+            EberhardstrasseMapFragmnet Emap = new EberhardstrasseMapFragmnet();
+            ft.replace(R.id.content_main,Emap,"Edberstrasse Map");
+            ft.commit();
+        }
+        else if(id==R.id.Einstein_map){
+            EinsteinMapFragment AEMap = new EinsteinMapFragment();
+            ft.replace(R.id.content_main,AEMap,"Albert Map");
+            ft.commit();
+        }
+        else if(id == R.id.healthbutton){
+            HealthInsuranceFragment HFrag = new HealthInsuranceFragment();
+            ft.replace(R.id.content_main,HFrag,"Health Insurance");
+            ft.commit();
+        }
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
