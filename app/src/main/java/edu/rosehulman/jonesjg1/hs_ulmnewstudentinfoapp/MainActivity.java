@@ -32,7 +32,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class MainActivity extends AppCompatActivity
-        implements ProfileFragment.OnFragmentInteractionListener,NavigationView.OnNavigationItemSelectedListener,LoginFragment.OnFragmentInteractionListener ,MessagingFragment.OnFragmentInteractionListener{
+        implements fundingFragment.OnFragmentInteractionListener,cityLawsFragment.OnFragmentInteractionListener,JobsFragment.OnFragmentInteractionListener,transportFragment.OnFragmentInteractionListener, ProfileFragment.OnFragmentInteractionListener,NavigationView.OnNavigationItemSelectedListener,LoginFragment.OnFragmentInteractionListener ,MessagingFragment.OnFragmentInteractionListener{
 
     private GoogleSignInAccount maccount;
 
@@ -143,13 +143,20 @@ public class MainActivity extends AppCompatActivity
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         int id = item.getItemId();
 
-        if (id == R.id.hostels) {
+        if (id == R.id.jobsbutton) {
+            JobsFragment jobsFragment = new JobsFragment();
+            ft.replace(R.id.content_main, jobsFragment, "jobs");
+            ft.commit();
             // Handle the camera action
-        } else if (id == R.id.health_insurance) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.fundingbutton) {
+            fundingFragment fundingFragment = new fundingFragment();
+            ft.replace(R.id.content_main,fundingFragment,"funding");
+            ft.commit();
+        } else if (id == R.id.transportbutton) {
+           transportFragment transportFragment = new transportFragment();
+            ft.replace(R.id.content_main,transportFragment,"transport");
+            ft.commit();
+        } else if (id == R.id.messagingbutton) {
 
             if(maccount != null) {
 
@@ -167,11 +174,19 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.lawsbutton) {
+            cityLawsFragment cityLawsFragment = new cityLawsFragment();
+            ft.replace(R.id.content_main, cityLawsFragment, "city laws");
+            ft.commit();
 
 
         }
+//        else if(R.id.pritwasse_map){
+//            Prittwitzstrasse_Map_Frame Pmap = new Prittwitzstrasse_Map_Frame();
+//            ft.replace(R.id.content_main,Pmap,"Pritwasse map");
+//            ft.commit();
+//        }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

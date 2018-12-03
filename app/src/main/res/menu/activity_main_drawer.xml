@@ -5,21 +5,19 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/hostels"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Hostels" />
+            android:id="@+id/jobsbutton"
+            android:title="Jobs" />
         <item
-            android:id="@+id/health_insurance"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Health Insurance" />
+            android:id="@+id/fundingbutton"
+
+            android:title="Funding" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Activities" />
+            android:id="@+id/transportbutton"
+            android:title="Transport" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_send"
-            android:title="Messaging" />
+            android:id="@+id/lawsbutton"
+
+            android:title="City Laws" />
     </group>
 
     <item android:title="Communicate">
@@ -29,9 +27,30 @@
                 android:icon="@drawable/ic_menu_share"
                 android:title="Share" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/messagingbutton"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="Message" />
+        </menu>
+    </item>
+    <item android:title="Navigation">
+        <menu>
+            <item
+                android:id="@+id/pritwasse_map"
+                android:title="Prittwitzstrasse Campus Map">
+
+            </item>
+
+            <item
+                android:id="@+id/Einstein_map"
+                android:title="Einstein Allee Campus Map">
+
+            </item>
+
+            <item
+                android:id="@+id/eberhardstrasse_map"
+                android:title="Eberhardstrasse Campus Map">
+
+            </item>
         </menu>
     </item>
 
