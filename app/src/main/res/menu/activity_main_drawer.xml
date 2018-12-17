@@ -27,6 +27,12 @@
         <item
             android:id="@+id/semPlanButton"
             android:title="Semester Plan"/>
+        <item
+            android:id="@+id/faqbutton"
+            android:title="FAQ"/>
+        <item
+            android:id="@+id/hostelbutton"
+            android:title="Hostel"/>
     </group>
 
     <item android:title="Communicate">

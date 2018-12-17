@@ -45,7 +45,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class MainActivity extends AppCompatActivity
-        implements HealthInsuranceFragment.OnFragmentInteractionListener,EberhardstrasseMapFragmnet.OnFragmentInteractionListener,EinsteinMapFragment.OnFragmentInteractionListener,PritwitzstrasseMapFragment.OnFragmentInteractionListener,fundingFragment.OnFragmentInteractionListener,cityLawsFragment.OnFragmentInteractionListener,JobsFragment.OnFragmentInteractionListener,transportFragment.OnFragmentInteractionListener, ProfileFragment.OnFragmentInteractionListener,NavigationView.OnNavigationItemSelectedListener,LoginFragment.OnFragmentInteractionListener ,MessagingFragment.OnFragmentInteractionListener, EventFragment.OnFragmentInteractionListener, SemPlanFragment.OnFragmentInteractionListener{
+        implements HealthInsuranceFragment.OnFragmentInteractionListener,EberhardstrasseMapFragmnet.OnFragmentInteractionListener,EinsteinMapFragment.OnFragmentInteractionListener,PritwitzstrasseMapFragment.OnFragmentInteractionListener,fundingFragment.OnFragmentInteractionListener,cityLawsFragment.OnFragmentInteractionListener,JobsFragment.OnFragmentInteractionListener,transportFragment.OnFragmentInteractionListener, ProfileFragment.OnFragmentInteractionListener,NavigationView.OnNavigationItemSelectedListener,LoginFragment.OnFragmentInteractionListener ,MessagingFragment.OnFragmentInteractionListener, EventFragment.OnFragmentInteractionListener, SemPlanFragment.OnFragmentInteractionListener,FAQFragment.OnFragmentInteractionListener, HostelFragment.OnFragmentInteractionListener{
 
     private GoogleSignInAccount maccount;
     private FirebaseAuth mAuth;
@@ -279,6 +279,14 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.transportbutton) {
            transportFragment transportFragment = new transportFragment();
             ft.replace(R.id.content_main,transportFragment,"transport");
+            ft.commit();
+        } else if (id == R.id.faqbutton) {
+            FAQFragment faqFragment = new FAQFragment();
+            ft.replace(R.id.content_main,faqFragment,"faq");
+            ft.commit();
+        } else if (id == R.id.hostelbutton) {
+            HostelFragment hostelFragment = new HostelFragment();
+            ft.replace(R.id.content_main,hostelFragment,"hostel");
             ft.commit();
         } else if (id == R.id.messagingbutton) {
 

@@ -102,13 +102,12 @@
     <string name="hello_blank_fragment">Hello Blank Fragment</string>
 
 
+    <string name="eventHeader"> Events</string>
+    <string name="eventIntro">City Ulm Adminstration and Hochschule Ulm provides a number of different events and activities to newcomers. All events and activities are available in Ulm, ensure that your time in Ulm will be productive as well as exciting. </string>
 
-    <string name= "eventHeader"> Events</string>
-    <string name= "eventIntro">City Ulm Adminstration and Hochschule Ulm provides a number of different events and activities to newcomers. All events and activities are available in Ulm, ensure that your time in Ulm will be productive as well as exciting. </string>
+    <string name="recreational"> Recreational Activities</string>
 
-    <string name= "recreational"> Recreational Activities</string>
-
-    <string name= "Clubs">
+    <string name="Clubs">
         <br>
             1. Name: Myer\s Club \n
                Type: Club and Disco, Bar \n
@@ -157,8 +156,8 @@
         </br>
 
  </string>
-    <string name= "Physical"> Physical Activities</string>
-    <string name= "Gyms_Fitness">
+    <string name="Physical"> Physical Activities</string>
+    <string name="Gyms_Fitness">
             <br>
             1. Name: Kieser Training \n
                Type: Gyms \n
@@ -194,9 +193,9 @@
     </string>
 
 
-    <string name= "Spiritual"> Religious and Spiritual activities </string>
+    <string name="Spiritual"> Religious and Spiritual activities </string>
 
-    <string name= "Churches">
+    <string name="Churches">
             <br>
             1. Name: Ulmer Münster \n
                Type: protestant  \n
@@ -228,7 +227,7 @@
     </string>
 
 
-    <string name= "Mosques">
+    <string name="Mosques">
             <br>
             1. Name: Osmangazi-Moschee \n
                Language: türkisch and deutsch  \n
@@ -249,7 +248,7 @@
             </br>
     </string>
 
-    <string name= "Temples">
+    <string name="Temples">
             <br>
             1. Name: Sri Durgamayi Ma Ashram e.V. \n
                Location: König-Wilhelm-Straße 35, 89073 Ulm \n
@@ -258,38 +257,99 @@
             </br>
     </string>
 
-    <string name= "Additional"> Additional information </string>
-    <string name= "hochschuleEvents"> Students can get acquinted with upcoming events concerning to Hochshule life by visiting link provided below \n
+    <string name="Additional"> Additional information </string>
+    <string name="hochschuleEvents"> Students can get acquinted with upcoming events concerning to Hochshule life by visiting link provided below \n
     https://studium.hs-ulm.de/en/Pages/Termine.aspx \n
     Moreover, more information about sport, cultural events and projects that are offered by Hochschule can be also found in this link: \n
         https://studium.hs-ulm.de/en/Pages/Sport_Kultur_Projekte.aspx?SearchCategory=RundUmsStudium; </string>
 
 
-    <string name= "semPlanHeader"> Semester Plan</string>
-    <string name= "semPlanIntro1"> At the beginning of the semester, new coming students have an opportunity to download thier semester plan of their program. Semester plan provides information about the courses which are placed for actual semeset. Link to download actual semester plan: \n
+    <string name="semPlanHeader"> Semester Plan</string>
+    <string name="semPlanIntro1"> At the beginning of the semester, new coming students have an opportunity to download thier semester plan of their program. Semester plan provides information about the courses which are placed for actual semeset. Link to download actual semester plan: \n
     https://www.hs-ulm.de/Dienste/Stundenplan/Studienanfänger/  \n
     </string>
 
-    <string name= "semPlanIntro2"> Moreover, there is also possible to download induvidual semeter plan for the higher course students according to the subjects of their preference.Link to download indivudial actual semester plan: \n
+    <string name="semPlanIntro2"> Moreover, there is also possible to download induvidual semeter plan for the higher course students according to the subjects of their preference.Link to download indivudial actual semester plan: \n
     https://lsf.verwaltung.hs-ulm.de/   \n
     </string>
 
 
-    <string name= "semPlanIntro3"> All courses offered in this actual semester. Link to the list of couses offered : \n
+    <string name="semPlanIntro3"> All courses offered in this actual semester. Link to the list of couses offered : \n
     https://lsf.verwaltung.hs-ulm.de/   \n
     After getting logged into system, there is section: Mein Studiengangplan. You need to just click onto it.
     </string>
 
 
-    <string name= "semPlanIntro4"> Detailed information about all the courses chosen by student for that semester.  \n
+    <string name="semPlanIntro4"> Detailed information about all the courses chosen by student for that semester.  \n
     https://lsf.verwaltung.hs-ulm.de/   \n
     After getting logged into system, there is section: Meine Veranstaltungen. You need to just click onto it.
     </string>
 
-    <string name= "semPlanIntro5"> All the important dates during the academic year at Hochschule Ulm including national holidays, semester break as well as exam periods.
+    <string name="semPlanIntro5"> All the important dates during the academic year at Hochschule Ulm including national holidays, semester break as well as exam periods.
         Link provides all the important dates for the actual semester:  \n
     https://studium.hs-ulm.de/en/Pages/Termine.aspx  \n
 
     </string>
+
+
+
+        <string name="appname">FAQ</string>
+        <string name="faq"> Frequently asked questions:   </string>
+        <string name="Q1" > 1. How to find the course in Germany?</string>
+        <string name="A1" > Find the suitable course of study! In the database there are more than 17500 courses for Bachelor, Master and State Examination. \n
+    https://www.daad.de/deutschland/studienangebote/international-programmes/en/detail/4669/ </string>
+        <string name="Q2" > 2. How do I apply for CTS course?</string>
+        <string name="A2" > We are delighted you are interested in the degree programme Computer Science (CTS). We hope the following link will help you successfully secure a place at our University of Applied Sciences. \n
+   https://studium.hs-ulm.de/de/Seiten/Studiengang_CTS_Bewerbung.aspx/ </string>
+        <string name="Q3" > 3. Different application forms for all the informatics faculty?</string>
+        <string name="A3" > In the following link given below you will get all application form. \n
+    http://www.hs-ulm.de/informatik-downloads/ </string>
+        <string name="Q4" > 4. What steps do I have to take after admission?</string>
+        <string name="A4" > The German embassy in your country will inform you about the details of visa application as they apply to your country. If you need a visa, please apply immediately after receiving the admission letter. Be aware that the visa procedure will take several weeks/. \n
+    https://studium.hs-ulm.de/de/Seiten/Studiengang_CTS_Bewerbung.aspx/ </string>
+        <string name="Q5" > 5. How do I apply for CTS course?</string>
+        <string name="A5" > We are delighted you are interested in the degree programme Computer Science (CTS). We hope the following link will help you successfully secure a place at our University of Applied Sciences. \n
+    https://studium.hs-ulm.de/de/Seiten/Studiengang_CTS_Bewerbung.aspx/ </string>
+        <string name="Q6" > 6. How to get to Ulm?</string>
+        <string name="A6" >The railway station (Hauptbahnhof) is in the town center, about a 10 minute walk from the church (Ulmer Münster). Ulm is about an hour from Stuttgart and 1.5-2 hours from Munich.more information if you need you will get the link below. \n
+    https://www.uni-ulm.de/en/io/degree-phd/welcome/getting-around/to-ulm </string>
+        <string name="Q8" > 8. How to get Semesterplan?</string>
+        <string name="A8" > In the following link given below you will get the Semesterplan. \n
+    https://lsf.verwaltung.hs-ulm.de/ </string>
+        <string name="Q9" > 9. How to find Mensa plan?</string>
+        <string name="A9" > In the following link given below you will get the mensa plan. \n
+     https://studium.hs-ulm.de/de/Seiten/Mensa.aspx/ </string>
+        <string name="Q10" > 10.How to find Room Plan?</string>
+        <string name="A10" > In the following link given below you will get room plan. \n
+    https: //lsf.verwaltung.hs-ulm.de/ </string>
+        <string name="Q11" > 11.  Here you can enroll, un-enroll from subjects and examinations, check your grades, search for other modules, and more.?</string>
+        <string name="A11" > Normally from first to third semester you will be automatically register for the exam. from third semester you have to register one week before the lecture started.if you don\t want to continue any course or don\t want to take any exam you have to deregister one month before the exam. In the following link given below you will get more information. \n
+     https://lsf.verwaltung.hs-ulm.de/qisserver/rds?state=usertype=0/ </string>
+        <string name="Q12" > 12. How to find Mensa plan?</string>
+        <string name="A12" > In the following link given below you will get the mensa plan. \n
+     https://studium.hs-ulm.de/de/Seiten/Mensa.aspx/ </string>
+        <string name="Q13" > 13. Where do I get Examination plans?</string>
+        <string name="A13" > Normally One month before exam plan in uploaded in the following link that given below . \n
+    http://www.hs-ulm.de/Fakultaet/Informatik/Prüfungen/ </string>
+        <string name="Q14" > 14. Where I can get the Academic Calendar?</string>
+        <string name="A14" > In the following link given below you will get the Academic Calendar. \n
+    https://studium.hs-ulm.de/de/Seiten/Termine.aspx/ </string>
+        <string name="Q15" > 15.  Access to the university email from browser?</string>
+        <string name="A15" > Every student assigned one email ID by HS Ulm. Normally all information regarding University you will get from this email.In the following link given below you will get the domain ID for email. \n
+    https: //webmail.hs-ulm.de/ </string>
+        <string name="Q16" > 16.Students’ union?</string>
+        <string name="A16" > In the following link given below you will get the student Union update. \n
+    https://studium.hs-ulm.de/de/Seiten/Verfasste_Studierendenschaft.aspx/ </string>
+        <string name="Q17" > 17.DreamSpark Webstore for informatics faculty (Important Software)?</string>
+        <string name="A17" > In the following link given below you will get important software that you need. \n
+    https://e5.onthehub.com/WebStore/ProductsByMajorVersionList.aspx?cmi_cs=1cmi_mnuMain=d36a65f7-6fcf-e111-971c-f04da23e67f6ws=1e06aec9-836f-e011-971f-0030487d8897vsro=8/ </string>
+
+
+
+        <string name="apppname">Hostel</string>
+        <string name="A18" > Most international students live in one of the dorms. Information about student housing are available here.There are two types of Hostel for Student.Private and public.The Studierendenwerk Ulm lease rooms in several residential homes in Ulm. Rooms are usually rented out for at least one semester (6 months). There are bus connections to all universities and the city centre from all residential homes. The best time to submit the application is around 3 months before your intended arrival. Moving in is only possible from Monday to Friday, i.e. if you arrive on a Friday afternoon, a Saturday or a Sunday, you will have to wait until Monday morning. The rooms of the student residences are mostly inhabited until the last day of the contract period. Therefore, you often cannot move in until the first day of your contract. More information how to get hostel  are found bellow..."?</string>
+
+
+
 
 </resources>
