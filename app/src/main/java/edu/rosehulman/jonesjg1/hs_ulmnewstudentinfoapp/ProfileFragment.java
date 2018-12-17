@@ -127,16 +127,7 @@ public class ProfileFragment extends Fragment {
 
     private void signOut() {
         // Firebase sign out
-        mAuth.signOut();
-
-        // Google sign out
-        mGoogleSignInClient.signOut().addOnCompleteListener(this.getActivity(),
-                new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-
-                    }
-                });
+        ((MainActivity)getActivity()).signOut();
     }
 
     /**

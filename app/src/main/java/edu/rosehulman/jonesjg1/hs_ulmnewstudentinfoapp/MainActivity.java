@@ -1,13 +1,16 @@
 package edu.rosehulman.jonesjg1.hs_ulmnewstudentinfoapp;
 
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -23,6 +26,16 @@ import android.widget.TextView;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
 
 import org.w3c.dom.Text;
 
@@ -35,7 +48,13 @@ public class MainActivity extends AppCompatActivity
         implements HealthInsuranceFragment.OnFragmentInteractionListener,EberhardstrasseMapFragmnet.OnFragmentInteractionListener,EinsteinMapFragment.OnFragmentInteractionListener,PritwitzstrasseMapFragment.OnFragmentInteractionListener,fundingFragment.OnFragmentInteractionListener,cityLawsFragment.OnFragmentInteractionListener,JobsFragment.OnFragmentInteractionListener,transportFragment.OnFragmentInteractionListener, ProfileFragment.OnFragmentInteractionListener,NavigationView.OnNavigationItemSelectedListener,LoginFragment.OnFragmentInteractionListener ,MessagingFragment.OnFragmentInteractionListener{
 
     private GoogleSignInAccount maccount;
-
+    private FirebaseAuth mAuth;
+    private static final String TAG = "GoogleActivity";
+    private static final int RC_SIGN_IN = 1;
+    private GoogleSignInClient mGoogleSignInClient;
+    private LoginFragment.OnFragmentInteractionListener mListener;
+    private TextView memail;
+    private TextView musername;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,14 +64,16 @@ public class MainActivity extends AppCompatActivity
 
         maccount = GoogleSignIn.getLastSignedInAccount(this);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+
+
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
+        mAuth = FirebaseAuth.getInstance();
 
         final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -63,15 +84,11 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         View header = navigationView.getHeaderView(0);
 
-        TextView username = header.findViewById(R.id.username);
-        username.setText("NULL");
-        TextView email = header.findViewById(R.id.email);
+        musername = header.findViewById(R.id.username);
+
+        memail = header.findViewById(R.id.email);
         ImageView ProfilePic = header.findViewById(R.id.profilepic);
-        if(maccount!=null){
-            username.setText(maccount.getDisplayName());
-            email.setText(maccount.getEmail());
-//            ProfilePic.setImageBitmap(getBitmapFromURL(account.getPhotoUrl().toString()));
-        }
+        setText();
 
         ProfilePic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,7 +97,8 @@ public class MainActivity extends AppCompatActivity
                 ProfileFragment profilefrag = new ProfileFragment();
                 ft.replace(R.id.content_main, profilefrag , "profile");
                 ft.commit();
-
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                drawer.closeDrawer(GravityCompat.START);
             }
         });
 
@@ -112,6 +130,103 @@ public class MainActivity extends AppCompatActivity
             // Log exception
             return null;
         }
+    }
+
+    private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
+        Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
+
+        AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
+        mAuth.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "signInWithCredential:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+
+                            // updateUI(user);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "signInWithCredential:failure", task.getException());
+                            //Snackbar.make(findViewById(R.id.main_layout), "Authentication Failed.", Snackbar.LENGTH_SHORT).show();
+
+                        }
+
+                        // ...
+                    }
+                });
+    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
+        if (requestCode == RC_SIGN_IN) {
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            try {
+                // Google Sign In was successful, authenticate with Firebase
+                maccount = task.getResult(ApiException.class);
+                setText();
+                firebaseAuthWithGoogle(maccount);
+                MessagingFragment messagingFragment = new MessagingFragment();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.content_main, messagingFragment , "messaging");
+                ft.commit();
+            } catch (ApiException e) {
+                // Google Sign In failed, update UI appropriately
+                Log.w(TAG, "Google sign in failed", e);
+                // ...
+            }
+        }
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        maccount = GoogleSignIn.getLastSignedInAccount(this);
+        setText();
+        //updateUI(currentUser);
+    }
+    public GoogleSignInAccount getGoogleAccount(){
+        return this.maccount;
+    }
+
+    public void setText(){
+        if(maccount!=null){
+            musername.setText(maccount.getDisplayName());
+            memail.setText(maccount.getEmail());
+//            ProfilePic.setImageBitmap(getBitmapFromURL(account.getPhotoUrl().toString()));
+        }
+        else{
+            musername.setText("NULL");
+            memail.setText("NULL");
+        }
+    }
+
+    public void signOut() {
+        // Firebase sign out
+        mAuth.signOut();
+
+        // Google sign out
+        mGoogleSignInClient.signOut().addOnCompleteListener(this,
+                new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+
+                    }
+                });
+        maccount = null;
+        setText();
+    }
+
+
+    public void signIn() {
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent, RC_SIGN_IN);
+
+
     }
 
     @Override
