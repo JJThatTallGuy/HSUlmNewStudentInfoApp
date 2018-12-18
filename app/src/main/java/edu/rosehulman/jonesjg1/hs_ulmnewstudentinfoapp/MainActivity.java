@@ -45,7 +45,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class MainActivity extends AppCompatActivity
-        implements HealthInsuranceFragment.OnFragmentInteractionListener,EberhardstrasseMapFragmnet.OnFragmentInteractionListener,EinsteinMapFragment.OnFragmentInteractionListener,PritwitzstrasseMapFragment.OnFragmentInteractionListener,fundingFragment.OnFragmentInteractionListener,cityLawsFragment.OnFragmentInteractionListener,JobsFragment.OnFragmentInteractionListener,transportFragment.OnFragmentInteractionListener, ProfileFragment.OnFragmentInteractionListener,NavigationView.OnNavigationItemSelectedListener,LoginFragment.OnFragmentInteractionListener ,MessagingFragment.OnFragmentInteractionListener{
+        implements HealthInsuranceFragment.OnFragmentInteractionListener,EberhardstrasseMapFragmnet.OnFragmentInteractionListener,EinsteinMapFragment.OnFragmentInteractionListener,PritwitzstrasseMapFragment.OnFragmentInteractionListener,fundingFragment.OnFragmentInteractionListener,cityLawsFragment.OnFragmentInteractionListener,JobsFragment.OnFragmentInteractionListener,transportFragment.OnFragmentInteractionListener, ProfileFragment.OnFragmentInteractionListener,NavigationView.OnNavigationItemSelectedListener,LoginFragment.OnFragmentInteractionListener ,MessagingFragment.OnFragmentInteractionListener, EventFragment.OnFragmentInteractionListener, SemPlanFragment.OnFragmentInteractionListener,FAQFragment.OnFragmentInteractionListener, HostelFragment.OnFragmentInteractionListener{
 
     private GoogleSignInAccount maccount;
     private FirebaseAuth mAuth;
@@ -267,9 +267,26 @@ public class MainActivity extends AppCompatActivity
             fundingFragment fundingFragment = new fundingFragment();
             ft.replace(R.id.content_main,fundingFragment,"funding");
             ft.commit();
+
+        } else if (id == R.id.eventButton) {
+            EventFragment eventFragment = new EventFragment();
+            ft.replace(R.id.content_main, eventFragment,"events");
+            ft.commit();
+        } else if (id == R.id.semPlanButton) {
+            SemPlanFragment semPlanFragment = new SemPlanFragment();
+            ft.replace(R.id.content_main,semPlanFragment, "semPlan");
+            ft.commit();
         } else if (id == R.id.transportbutton) {
            transportFragment transportFragment = new transportFragment();
             ft.replace(R.id.content_main,transportFragment,"transport");
+            ft.commit();
+        } else if (id == R.id.faqbutton) {
+            FAQFragment faqFragment = new FAQFragment();
+            ft.replace(R.id.content_main,faqFragment,"faq");
+            ft.commit();
+        } else if (id == R.id.hostelbutton) {
+            HostelFragment hostelFragment = new HostelFragment();
+            ft.replace(R.id.content_main,hostelFragment,"hostel");
             ft.commit();
         } else if (id == R.id.messagingbutton) {
 

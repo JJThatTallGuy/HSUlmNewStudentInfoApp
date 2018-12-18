@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1">
+
+
+
+    <TextView
+        android:id="@+id/BasicInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/A18"
+        android:autoLink="web"
+        android:linksClickable="true"
+
+        />
+
+    <TextView
+        android:id="@+id/PublicList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="All Hostel info that student can apply for stay:"
+        android:paddingTop="8dp"
+        android:linksClickable="true"
+        android:textColor="@color/Blue"
+        android:textSize="22sp"
+        android:autoLink="web"
+        />
+
+    <TextView
+        android:id="@+id/Pub1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Public(Studentwerk): https://studierendenwerk-ulm.de/wohnen/wohnhaeuser/#wohnhaeuser-ulm/"
+        android:paddingTop="8dp"
+        android:linksClickable="true"
+        android:autoLink="web"
+        />
+    <TextView
+        android:id="@+id/Pub2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Private Hostel:https://studierendenwerk-ulm.de/wohnen/private-zimmer-finden/#privatzimmerkartei/"
+        android:paddingTop="8dp"
+        android:linksClickable="true"
+        android:autoLink="web"
+        />
+    <TextView
+        android:id="@+id/Pub3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Others: https://www.wg-gesucht.de/"
+        android:paddingTop="8dp"
+        android:linksClickable="true"
+        android:autoLink="web"
+        />
+
+    </TableLayout>
+</ScrollView>
+

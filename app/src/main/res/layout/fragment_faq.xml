@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1">
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:id="@+id/faqHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/faq"
+            android:autoLink="web"
+            android:textSize="26sp" />
+
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Q1"
+            android:textColor="@color/colorPrimaryDark"
+            android:autoLink="web"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/A1"
+            android:autoLink="web"
+            android:textSize="16sp" />
+
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Q2"
+            android:textColor="@color/colorPrimaryDark"
+            android:autoLink="web"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/A2"
+            android:autoLink="web"
+            android:textSize="16sp"/>
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Q3"
+            android:textColor="@color/colorPrimaryDark"
+            android:autoLink="web"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/A3"
+            android:autoLink="web"
+            android:textSize="16sp" />
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Q4"
+            android:textColor="@color/colorPrimaryDark"
+            android:autoLink="web"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/A4"
+            android:autoLink="web"
+            android:textSize="16sp" />
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Q5"
+            android:textColor="@color/colorPrimaryDark"
+            android:autoLink="web"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/A5"
+            android:autoLink="web"
+            android:textSize="16sp" />
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Q6"
+            android:textColor="@color/colorPrimaryDark"
+            android:autoLink="web"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/A6"
+            android:autoLink="web"
+            android:textSize="16sp" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Q8"
+            android:textColor="@color/colorPrimaryDark"
+            android:autoLink="web"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/A8"
+            android:autoLink="web"
+            android:textSize="16sp" />
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Q9"
+            android:textColor="@color/colorPrimaryDark"
+            android:autoLink="web"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/A9"
+            android:autoLink="web"
+            android:textSize="16sp" />
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Q10"
+            android:textColor="@color/colorPrimaryDark"
+            android:autoLink="web"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/A10"
+            android:autoLink="web"
+            android:textSize="16sp" />
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Q11"
+            android:textColor="@color/colorPrimaryDark"
+            android:autoLink="web"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/A11"
+            android:autoLink="web"
+            android:textSize="16sp" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Q12"
+            android:textColor="@color/colorPrimaryDark"
+            android:autoLink="web"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/A12"
+            android:autoLink="web"
+            android:textSize="16sp" />
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Q13"
+            android:textColor="@color/colorPrimaryDark"
+            android:autoLink="web"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/A13"
+            android:autoLink="web"
+            android:textSize="16sp" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Q14"
+            android:textColor="@color/colorPrimaryDark"
+            android:autoLink="web"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/A14"
+            android:autoLink="web"
+            android:textSize="16sp" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Q15"
+            android:textColor="@color/colorPrimaryDark"
+            android:autoLink="web"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/A15"
+            android:autoLink="web"
+            android:textSize="16sp" />
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Q16"
+            android:textColor="@color/colorPrimaryDark"
+            android:autoLink="web"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/A16"
+            android:autoLink="web"
+            android:textSize="16sp" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Q17"
+            android:textColor="@color/colorPrimaryDark"
+            android:autoLink="web"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/A17"
+            android:autoLink="web"
+            android:textSize="16sp" />
+
+
+    </TableLayout>
+</ScrollView>
+
