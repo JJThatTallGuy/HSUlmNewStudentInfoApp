@@ -4,8 +4,10 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,6 +22,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.HeaderViewListAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -43,6 +46,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
 
 public class MainActivity extends AppCompatActivity
         implements HealthInsuranceFragment.OnFragmentInteractionListener,EberhardstrasseMapFragmnet.OnFragmentInteractionListener,EinsteinMapFragment.OnFragmentInteractionListener,PritwitzstrasseMapFragment.OnFragmentInteractionListener,fundingFragment.OnFragmentInteractionListener,cityLawsFragment.OnFragmentInteractionListener,JobsFragment.OnFragmentInteractionListener,transportFragment.OnFragmentInteractionListener, ProfileFragment.OnFragmentInteractionListener,NavigationView.OnNavigationItemSelectedListener,LoginFragment.OnFragmentInteractionListener ,MessagingFragment.OnFragmentInteractionListener, EventFragment.OnFragmentInteractionListener, SemPlanFragment.OnFragmentInteractionListener,FAQFragment.OnFragmentInteractionListener, HostelFragment.OnFragmentInteractionListener{
@@ -344,4 +348,44 @@ public class MainActivity extends AppCompatActivity
     public void onFragmentInteraction(Uri uri) {
 
     }
+
+
+    //Use this for the drop down menu
+    public void findPublicButton(View view) {
+        TextView pub1 = findViewById(R.id.Pub1);
+        TextView pub2 = findViewById(R.id.Pub2);
+        TextView pub3 = findViewById(R.id.Pub3);
+        TextView pub4 = findViewById(R.id.Pub4);
+        if(pub1.getVisibility() == View.VISIBLE){
+            pub1.setVisibility(View.GONE);
+            pub2.setVisibility(View.GONE);
+            pub3.setVisibility(View.GONE);
+            pub4.setVisibility(View.GONE);
+        }
+        else{
+            pub1.setVisibility(View.VISIBLE);
+            pub2.setVisibility(View.VISIBLE);
+            pub3.setVisibility(View.VISIBLE);
+            pub4.setVisibility(View.VISIBLE);
+        }
+    }
+    public void findPrivateButton(View view) {
+        TextView priv1 = findViewById(R.id.Priv1);
+        TextView priv2 = findViewById(R.id.Priv2);
+        TextView priv3 = findViewById(R.id.Priv3);
+        TextView priv4 = findViewById(R.id.Priv4);
+        if(priv1.getVisibility() == View.VISIBLE){
+            priv1.setVisibility(View.GONE);
+            priv2.setVisibility(View.GONE);
+            priv3.setVisibility(View.GONE);
+            priv4.setVisibility(View.GONE);
+        }
+        else{
+            priv1.setVisibility(View.VISIBLE);
+            priv2.setVisibility(View.VISIBLE);
+            priv3.setVisibility(View.VISIBLE);
+            priv4.setVisibility(View.VISIBLE);
+        }
+    }
+
 }
