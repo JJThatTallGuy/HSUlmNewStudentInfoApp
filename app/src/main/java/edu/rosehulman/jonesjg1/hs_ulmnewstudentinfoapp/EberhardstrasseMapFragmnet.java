@@ -64,6 +64,7 @@ public class EberhardstrasseMapFragmnet extends Fragment {
         }
     }
 
+    /** Initializes photoview attacher object to implement zooming in for the images.*/
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

@@ -69,10 +69,71 @@ public class HealthInsuranceFragment extends Fragment {
         }
     }
 
+    /** Includes the XMLParser that is used to get the up-to-date strings.xml file from the Internet.*/
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.health,container,false);
+        String queryString = "http://pastebin.com/raw/3NF26n1z";
+        try{
+            URL url = new URL(queryString);
+            URLConnection urlConnection = url.openConnection();
+            InputStream is = urlConnection.getInputStream();
+            XmlPullParser parser = XmlPullParserFactory.newInstance().newPullParser();
+            parser.setInput(is, urlConnection.getContentEncoding());
+            int eventType = parser.getEventType();
+            while(eventType != XmlPullParser.END_DOCUMENT){
+                if (eventType == XmlPullParser.START_TAG && "health_basic".equals(parser.getName())){
+                    Log.e("Test", parser.toString());
+                    String s = parser.getAttributeValue(null, "text");
+                    TextView BasicInfo = rootView.findViewById(R.id.BasicInfo);
+                    BasicInfo.setText(s);
+                }
+                else if(eventType == XmlPullParser.START_TAG && "pub1".equals(parser.getName())){
+                    String s = parser.getAttributeValue(null, "text");
+                    TextView Pub1 = rootView.findViewById(R.id.Pub1);
+                    Pub1.setText(s);
+                }
+                else if(eventType == XmlPullParser.START_TAG && "pub2".equals(parser.getName())){
+                    String s = parser.getAttributeValue(null, "text");
+                    TextView Pub2 = rootView.findViewById(R.id.Pub2);
+                    Pub2.setText(s);
+                }else if(eventType == XmlPullParser.START_TAG && "pub3".equals(parser.getName())){
+                    String s = parser.getAttributeValue(null, "text");
+                    TextView Pub3 = rootView.findViewById(R.id.Pub3);
+                    Pub3.setText(s);
+                }else if(eventType == XmlPullParser.START_TAG && "pub4".equals(parser.getName())){
+                    String s = parser.getAttributeValue(null, "text");
+                    TextView Pub4 = rootView.findViewById(R.id.Pub4);
+                    Pub4.setText(s);
+                }
+                else if(eventType == XmlPullParser.START_TAG && "priv1".equals(parser.getName())){
+                    String s = parser.getAttributeValue(null, "text");
+                    TextView Priv1 = rootView.findViewById(R.id.Priv1);
+                    Priv1.setText(s);
+                }
+                else if(eventType == XmlPullParser.START_TAG && "priv2".equals(parser.getName())){
+                    String s = parser.getAttributeValue(null, "text");
+                    TextView Priv2 = rootView.findViewById(R.id.Priv2);
+                    Priv2.setText(s);
+                }else if(eventType == XmlPullParser.START_TAG && "priv3".equals(parser.getName())){
+                    String s = parser.getAttributeValue(null, "text");
+                    TextView Priv3 = rootView.findViewById(R.id.Priv3);
+                    Priv3.setText(s);
+                }else if(eventType == XmlPullParser.START_TAG && "priv4".equals(parser.getName())){
+                    String s = parser.getAttributeValue(null, "text");
+                    TextView Priv4 = rootView.findViewById(R.id.Priv4);
+                    Priv4.setText(s);
+                }
+
+                eventType = parser.next();
+            }
+
+        } catch(Exception ex) {
+            Log.e("Health", "Can't query PasteBin");
+            ex.printStackTrace();
+        }
+
 
         return rootView;
     }

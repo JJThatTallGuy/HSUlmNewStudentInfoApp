@@ -59,6 +59,7 @@
 
 
         <TextView
+            android:id="@+id/Physical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Physical"
@@ -76,6 +77,7 @@
             android:textSize="16sp" />
 
         <TextView
+            android:id="@+id/gyms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Gyms_Fitness"
@@ -86,6 +88,7 @@
 
 
         <TextView
+            android:id="@+id/Spiritual"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Spiritual"
@@ -106,6 +109,7 @@
 
 
         <TextView
+            android:id="@+id/churches_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Churches"
@@ -124,6 +128,7 @@
             android:textSize="16sp" />
 
         <TextView
+            android:id="@+id/mosques_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Mosques"
@@ -142,6 +147,7 @@
             android:textSize="16sp" />
 
         <TextView
+            android:id="@+id/temples_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Temples"
@@ -150,6 +156,7 @@
             android:textSize="16sp" />
 
         <TextView
+            android:id="@+id/Additional"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Additional"
@@ -158,6 +165,7 @@
             android:textSize="22sp" />
 
         <TextView
+            android:id="@+id/hochschuleEvents"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/hochschuleEvents"

@@ -4,9 +4,19 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserFactory;
+
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
 
 
 /**
@@ -60,11 +70,79 @@ public class SemPlanFragment extends Fragment {
         }
     }
 
+    /** Includes the XMLParser that is used to get the up-to-date strings.xml file from the Internet.*/
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_sem_plan, container, false);
+        String queryString = "http://pastebin.com/raw/3NF26n1z";
+        try {
+            URL url = new URL(queryString);
+            URLConnection urlConnection = url.openConnection();
+            InputStream is = urlConnection.getInputStream();
+            XmlPullParser parser = XmlPullParserFactory.newInstance().newPullParser();
+            parser.setInput(is, urlConnection.getContentEncoding());
+            int eventType = parser.getEventType();
+            while(eventType != XmlPullParser.END_DOCUMENT){
+                if (eventType == XmlPullParser.START_TAG && "semPlanHeader".equals(parser.getName())){
+                    String s = parser.getAttributeValue(null, "text");
+                    TextView semPlanHeader = rootView.findViewById(R.id.semPlanHeader);
+                    s = s.replace("\\bre", "</br>");
+                    s = s.replace("\\br", "<br>");
+                    s = s.replace("\\n", "<br />");
+                    semPlanHeader.setText(Html.fromHtml(s));
+                }
+                else if (eventType == XmlPullParser.START_TAG && "semPlanIntro1".equals(parser.getName())){
+                    String s = parser.getAttributeValue(null, "text");
+                    TextView eventIntro = rootView.findViewById(R.id.eventIntro);
+                    s = s.replace("\\bre", "</br>");
+                    s = s.replace("\\br", "<br>");
+                    s = s.replace("\\n", "<br />");
+                    eventIntro.setText(Html.fromHtml(s));
+                }
+                else if (eventType == XmlPullParser.START_TAG && "semPlanIntro2".equals(parser.getName())){
+                    String s = parser.getAttributeValue(null, "text");
+                    TextView eventIntro2 = rootView.findViewById(R.id.eventIntro2);
+                    s = s.replace("\\bre", "</br>");
+                    s = s.replace("\\br", "<br>");
+                    s = s.replace("\\n", "<br />");
+                    eventIntro2.setText(Html.fromHtml(s));
+                }
+                else if (eventType == XmlPullParser.START_TAG && "semPlanIntro3".equals(parser.getName())){
+                    String s = parser.getAttributeValue(null, "text");
+                    TextView eventIntro3 = rootView.findViewById(R.id.eventIntro3);
+                    s = s.replace("\\bre", "</br>");
+                    s = s.replace("\\br", "<br>");
+                    s = s.replace("\\n", "<br />");
+                    eventIntro3.setText(Html.fromHtml(s));
+                }
+                else if (eventType == XmlPullParser.START_TAG && "semPlanIntro4".equals(parser.getName())){
+                    String s = parser.getAttributeValue(null, "text");
+                    TextView eventIntro4 = rootView.findViewById(R.id.eventIntro4);
+                    s = s.replace("\\bre", "</br>");
+                    s = s.replace("\\br", "<br>");
+                    s = s.replace("\\n", "<br />");
+                    eventIntro4.setText(Html.fromHtml(s));
+                }
+                else if (eventType == XmlPullParser.START_TAG && "semPlanIntro5".equals(parser.getName())){
+                    String s = parser.getAttributeValue(null, "text");
+                    TextView eventIntro5 = rootView.findViewById(R.id.eventIntro5);
+                    s = s.replace("\\bre", "</br>");
+                    s = s.replace("\\br", "<br>");
+                    s = s.replace("\\n", "<br />");
+                    eventIntro5.setText(Html.fromHtml(s));
+                }
+                eventType = parser.next();
+            }
+
+        } catch (Exception ex){
+            Log.e("SemesterPlan", "Can't query Pastebin");
+            ex.printStackTrace();
+        }
+
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sem_plan, container, false);
+        return rootView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

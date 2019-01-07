@@ -109,6 +109,10 @@ public class MainActivity extends AppCompatActivity
 
 
         navigationView.setNavigationItemSelectedListener(this);
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
+
     }
 
     @Override
@@ -161,6 +165,9 @@ public class MainActivity extends AppCompatActivity
                     }
                 });
     }
+    /** Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
+     * If Google Sign In was successful, authenticate with Firebase
+     * If Google Sign In failed, update UI appropriately*/
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -184,6 +191,7 @@ public class MainActivity extends AppCompatActivity
             }
         }
     }
+    /**Check if user is signed in (non-null) and update UI accordingly.*/
     @Override
     public void onStart() {
         super.onStart();
@@ -208,7 +216,7 @@ public class MainActivity extends AppCompatActivity
             memail.setText("NULL");
         }
     }
-
+    /**Firebase and Google sign out.*/
     public void signOut() {
         // Firebase sign out
         mAuth.signOut();
@@ -232,7 +240,7 @@ public class MainActivity extends AppCompatActivity
 
 
     }
-
+    /**Inflate the menu; this adds items to the action bar if it is present.*/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -240,6 +248,9 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    /**Handle action bar item clicks here. The action bar will
+     * automatically handle clicks on the Home/Up button, so long
+     * as you specify a parent activity in AndroidManifest.xml.*/
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -257,6 +268,7 @@ public class MainActivity extends AppCompatActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
+    /**Handle navigation view item clicks here.*/
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         FragmentTransaction ft = getFragmentManager().beginTransaction();
@@ -350,7 +362,7 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-    //Use this for the drop down menu
+    /**Used this for the drop down menu for the public health insurance list. */
     public void findPublicButton(View view) {
         TextView pub1 = findViewById(R.id.Pub1);
         TextView pub2 = findViewById(R.id.Pub2);
@@ -369,6 +381,7 @@ public class MainActivity extends AppCompatActivity
             pub4.setVisibility(View.VISIBLE);
         }
     }
+    /**Used this for the dropdown menu for the private health insurance list*/
     public void findPrivateButton(View view) {
         TextView priv1 = findViewById(R.id.Priv1);
         TextView priv2 = findViewById(R.id.Priv2);
