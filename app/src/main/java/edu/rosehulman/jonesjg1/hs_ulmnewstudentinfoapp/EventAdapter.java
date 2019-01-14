@@ -63,7 +63,7 @@ public class EventAdapter extends BaseExpandableListAdapter {
         String title = (String)this.getGroup(groupPosition);
         if (convertView == null){
             LayoutInflater layoutInflater = (LayoutInflater)this.ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = layoutInflater.inflate(R.layout.eventP_layout, null);
+            convertView = layoutInflater.inflate(R.layout.eventp_layout, null);
 
         }
         TextView textView = convertView.findViewById(R.id.heading_item);
@@ -77,7 +77,7 @@ public class EventAdapter extends BaseExpandableListAdapter {
         String title = (String)this.getChild(groupPosition, childPosition);
         if (convertView == null){
             LayoutInflater layoutInflater = (LayoutInflater)this.ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = layoutInflater.inflate(R.layout.eventCH_layout, null);
+            convertView = layoutInflater.inflate(R.layout.eventch_layout, null);
         }
         TextView textView = (TextView) convertView.findViewById(R.id.child_item);
         textView.setText(title);

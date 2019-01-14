@@ -267,6 +267,10 @@ public class MainActivity extends AppCompatActivity
             fundingFragment fundingFragment = new fundingFragment();
             ft.replace(R.id.content_main,fundingFragment,"funding");
             ft.commit();
+        } else if (id == R.id.eventButton) {
+            Intent intent = new Intent(this, EventActivity.class);
+            startActivity(intent);
+
 
         }  else if (id == R.id.semPlanButton) {
             SemPlanFragment semPlanFragment = new SemPlanFragment();

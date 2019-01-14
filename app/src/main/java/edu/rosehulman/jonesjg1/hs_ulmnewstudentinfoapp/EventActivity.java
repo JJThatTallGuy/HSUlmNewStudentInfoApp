@@ -1,5 +1,6 @@
 package edu.rosehulman.jonesjg1.hs_ulmnewstudentinfoapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ExpandableListView;
@@ -14,6 +15,7 @@ public class EventActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event);
+        Intent intent = getIntent();
         expandableListView = findViewById(R.id.exp_listview);
         List <String> Headings = new ArrayList <String>();
         List<String> L1 = new ArrayList <String>();

@@ -103,6 +103,8 @@
 
 
     <string name="eventHeader"> Events</string>
+    <string name="eventIntro"> Hochschule Ulm provides a number of different events and activities to newcomers. All events and activities are available in Ulm, ensure that your time in Ulm will be productive as well as exciting. </string>
+
     <string-array name="header_titles">
         <item> Recreational Activities</item>
         <item> Physical Activities</item>
@@ -263,11 +265,6 @@
         </item>
     </string-array>
 
-    <string name="Additional"> Additional information </string>
-    <string name="hochschuleEvents"> Students can get acquinted with upcoming events concerning to Hochshule life by visiting link provided below \n
-    https://studium.hs-ulm.de/en/Pages/Termine.aspx \n
-    Moreover, more information about sport, cultural events and projects that are offered by Hochschule can be also found in this link: \n
-        https://studium.hs-ulm.de/en/Pages/Sport_Kultur_Projekte.aspx?SearchCategory=RundUmsStudium; </string>
 
 
     <string name="semPlanHeader"> Semester Plan</string>
