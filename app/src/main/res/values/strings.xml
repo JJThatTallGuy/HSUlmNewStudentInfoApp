@@ -103,159 +103,165 @@
 
 
     <string name="eventHeader"> Events</string>
-    <string name="eventIntro">City Ulm Adminstration and Hochschule Ulm provides a number of different events and activities to newcomers. All events and activities are available in Ulm, ensure that your time in Ulm will be productive as well as exciting. </string>
+    <string-array name="header_titles">
+        <item> Recreational Activities</item>
+        <item> Physical Activities</item>
+        <item> Religious and Spiritual Activities</item> </string-array>
 
-    <string name="recreational"> Recreational Activities</string>
-
-    <string name="Clubs">
-        <br>
+    <string-array name="h1_items">
+    <item>
+            Clubs: \n
             1. Name: Myer\s Club \n
                Type: Club and Disco, Bar \n
                Location: Lautenberg 1, 89073 Ulm \n
                Info: https://www.myers-club.de \n
-
+    </item>
+    <item>
             2. Name: Frau Berger  \n
                Type: Club and Disco,Veranstalltungsort  \n
                Location: EhingerStrasse 19, 89077 Ulm \n
                Info: https://www.frauberger.de \n
-
-            3. Name: Theatro \n
+    </item>
+        <item>
+        3. Name: Theatro \n
                Type: Club and Disco,Veranstalltungsort  \n
                Location: HirschStrasse 12/1, 89073 Ulm \n
                Info: https://www.theatroclub.de \n
-
-            4. Name: Olga \n
+    </item>
+        <item>
+        4. Name: Olga \n
                Type: Club and Bar,Disco  \n
                Location: OlgaStrasse 126, 89073 Ulm \n
                Info: https://www.olga-ulm.de \n
-
-            5. Name: Rockside \n
+    </item>
+        <item>
+        5. Name: Rockside \n
                Type: Club and Disco \n
                Location: BanzenmachenStrasse 3, 89077 Ulm \n
                Info: https://www.rockside.de \n
-
-            6. Name: Rules Club \n
+    </item>
+        <item>
+        6. Name: Rules Club \n
                Type: Club and Disco  \n
                Location: FraeunStrasse 29, 89073 Ulm \n
                Info: https://www.rules-club.de \n
-
-            7. Name: Jazzkeller Sauschdall \n
+    </item>
+        <item>
+        7. Name: Jazzkeller Sauschdall \n
                Type: Jazz and Blues,Club and Disco  \n
                Location: PrittwitzStrasse 36, 89075 Ulm \n
                Info: https://www.sauschdall.de \n
-
-            8. Name: Club Violet \n
+    </item>
+        <item>
+        8. Name: Club Violet \n
                Type: Club and Disco, Lounge, Biergarten  \n
                Location: DieselStrasse 5, 89231 Neu-Ulm \n
                Info: https://www.violet-online.de \n
+</item>
 
-        </br>
-        <br>
-            Above on the list, we have provided mostly attended clubs in Ulm. \n
-            Click on this link for more infoLink: https://www.yelp.com/search?cflt=nightlifefind_loc=Ulm%2C+Baden-Württemberg
-        </br>
+    </string-array>
 
- </string>
-    <string name="Physical"> Physical Activities</string>
-    <string name="Gyms_Fitness">
-            <br>
+    <string-array name="h2_items">
+    <item>
+            Gyms: \n
             1. Name: Kieser Training \n
                Type: Gyms \n
                Location: Syrlinstrasse 35, 89073 Ulm \n
                Info: https://www.kieser-training.de \n
-
+    </item>
+    <item>
             2. Name: First Fit Fitness-Studio \n
                Type: Gyms \n
                Location: EhingerStrasse 19a 89077 Ulm \n
                Info: https://www.kieser-training.de \n
-
+    </item>
+        <item>
             3. Name: McFIT \n
                Type: Gyms \n
                Location: VorwerkStrasse 2 89231 Neu-Ulm \n
                Info: https://www.mcfit.de \n
-
+    </item>
+        <item>
             4. Name: Power Plate Training \n
                Type: Nutritionists, Gyms, Sporting Goods  \n
                Location: Münsterplatz 20, 89073 Ulm \n
                Info: https://www.goodvibrations-ulm.de \n
-
+    </item>
+        <item>
             5. Name: BodyNumber1 | EMS Fitnessstudios \n
                Type: Trainers, Gyms \n
                Location: Olgastrasse 83, 89073 Ulm \n
-               Info: https://www.bodynumberone.de \n </br>
-            <br> </br>
+               Info: https://www.bodynumberone.de \n
+        </item>
 
-            <br>
-            Except gyms, there are several sport activities offered by Uni Ulm for the students. Moreover, SSV Ulm which is the largest sport club in the city, provides different types of recreational and elite athletes. \n
-            Click on this links for more info: https://sport.uni-ulm.de  \n
-            https://www.ssvulm1846.de
-            </br>
-    </string>
+</string-array>
 
 
-    <string name="Spiritual"> Religious and Spiritual activities </string>
-
-    <string name="Churches">
-            <br>
+    <string-array name="h3_items">
+    <item>
+            Churches: \n
             1. Name: Ulmer Münster \n
                Type: protestant  \n
                Location: Münsterplatz 21, 89073 Ulm \n
                Info: https://www.ulmer-muenster.de \n
-
+    </item>
+    <item>
             2. Name: Pfarrkirche St. Georg \n
                Type: catholic \n
                Location: Beethovenstraße 1, 89073 Ulm \n
                Info: https://www.katholische-kirche-ulm-mitte-ost.de \n
-
+    </item>
+        <item>
             3. Name: Pfarrkirche St. Georg \n
                Type: catholic \n
                Location: Beethovenstraße 1, 89073 Ulm \n
                Info: https://www.katholische-kirche-ulm-mitte-ost.de \n
-
+    </item>
+        <item>
             4. Name: Kirchengemeinde Russ. Orthodoxe \n
                Type: orthodoxe \n
                Location: Judenhof 9, 89073 Ulm \n
                Info: 0731 1849165 \n
-
+    </item>
+        <item>
             5. Name: Ev. Reformation community Martin Luther Church \n
                Type: protestant \n
                Location: Zinglerstraße 66, 89077 Ulm \n
                Info: http://www.reformationsgemeinde-ulm.de \n
+    </item>
+        <item>
 
-            Click on this links for more info: https://www.yelp.com \n
-            </br>
-    </string>
-
-
-    <string name="Mosques">
-            <br>
+    </item>
+        <item>
+            Mosques:  \n
             1. Name: Osmangazi-Moschee \n
                Language: türkisch and deutsch  \n
                Location: Schillerstrasse 29, 89077 Ulm \n
                Info: (0731) 63555 \n
-
+    </item>
+        <item>
             2. Name: DITIB \n
                Language: türkisch and deutsch \n
                Location: SöflingerStrasse 78, 89077 Ulm \n
                Info: (0731)06376 \n
-
+    </item>
+        <item>
             3. Name: Al-Salam \n
                Language: arabisch \n
                Location: NeuStrasse 3, 89077 Ulm \n
+    </item>
+        <item>
 
 
-            Click on this links for more info: https://www.moscheesuche.de/moschee/stadt/Ulm/6562  \n
-            </br>
-    </string>
-
-    <string name="Temples">
-            <br>
+    </item>
+        <item>
+            Temples: \n
             1. Name: Sri Durgamayi Ma Ashram e.V. \n
                Location: König-Wilhelm-Straße 35, 89073 Ulm \n
                Info: https://www.ashram.de \n
-            Click on this links for more info: https://www.cybo.com/DE/ulm/hindu-temple  \n
-            </br>
-    </string>
+               Click on this links for more info: https://www.cybo.com/DE/ulm/hindu-temple  \n
+        </item>
+    </string-array>
 
     <string name="Additional"> Additional information </string>
     <string name="hochschuleEvents"> Students can get acquinted with upcoming events concerning to Hochshule life by visiting link provided below \n
