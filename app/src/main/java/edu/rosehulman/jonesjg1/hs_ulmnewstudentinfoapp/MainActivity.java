@@ -4,8 +4,10 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,6 +22,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.HeaderViewListAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -44,8 +47,9 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+
 public class MainActivity extends AppCompatActivity
-        implements HealthInsuranceFragment.OnFragmentInteractionListener,EberhardstrasseMapFragmnet.OnFragmentInteractionListener,EinsteinMapFragment.OnFragmentInteractionListener,PritwitzstrasseMapFragment.OnFragmentInteractionListener,fundingFragment.OnFragmentInteractionListener,cityLawsFragment.OnFragmentInteractionListener,JobsFragment.OnFragmentInteractionListener,transportFragment.OnFragmentInteractionListener, ProfileFragment.OnFragmentInteractionListener,NavigationView.OnNavigationItemSelectedListener,LoginFragment.OnFragmentInteractionListener ,MessagingFragment.OnFragmentInteractionListener, EventFragment.OnFragmentInteractionListener, SemPlanFragment.OnFragmentInteractionListener,FAQFragment.OnFragmentInteractionListener, HostelFragment.OnFragmentInteractionListener{
+        implements HealthInsuranceFragment.OnFragmentInteractionListener,EberhardstrasseMapFragmnet.OnFragmentInteractionListener,EinsteinMapFragment.OnFragmentInteractionListener,PritwitzstrasseMapFragment.OnFragmentInteractionListener,fundingFragment.OnFragmentInteractionListener,cityLawsFragment.OnFragmentInteractionListener,JobsFragment.OnFragmentInteractionListener,transportFragment.OnFragmentInteractionListener, ProfileFragment.OnFragmentInteractionListener,NavigationView.OnNavigationItemSelectedListener,LoginFragment.OnFragmentInteractionListener ,MessagingFragment.OnFragmentInteractionListener, SemPlanFragment.OnFragmentInteractionListener,FAQFragment.OnFragmentInteractionListener, HostelFragment.OnFragmentInteractionListener{
 
     private GoogleSignInAccount maccount;
     private FirebaseAuth mAuth;
@@ -105,6 +109,10 @@ public class MainActivity extends AppCompatActivity
 
 
         navigationView.setNavigationItemSelectedListener(this);
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
+
     }
 
     @Override
@@ -157,6 +165,9 @@ public class MainActivity extends AppCompatActivity
                     }
                 });
     }
+    /** Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
+     * If Google Sign In was successful, authenticate with Firebase
+     * If Google Sign In failed, update UI appropriately*/
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -180,6 +191,7 @@ public class MainActivity extends AppCompatActivity
             }
         }
     }
+    /**Check if user is signed in (non-null) and update UI accordingly.*/
     @Override
     public void onStart() {
         super.onStart();
@@ -204,7 +216,7 @@ public class MainActivity extends AppCompatActivity
             memail.setText("NULL");
         }
     }
-
+    /**Firebase and Google sign out.*/
     public void signOut() {
         // Firebase sign out
         mAuth.signOut();
@@ -228,7 +240,7 @@ public class MainActivity extends AppCompatActivity
 
 
     }
-
+    /**Inflate the menu; this adds items to the action bar if it is present.*/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -236,6 +248,9 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    /**Handle action bar item clicks here. The action bar will
+     * automatically handle clicks on the Home/Up button, so long
+     * as you specify a parent activity in AndroidManifest.xml.*/
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -253,6 +268,7 @@ public class MainActivity extends AppCompatActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
+    /**Handle navigation view item clicks here.*/
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         FragmentTransaction ft = getFragmentManager().beginTransaction();
@@ -267,12 +283,11 @@ public class MainActivity extends AppCompatActivity
             fundingFragment fundingFragment = new fundingFragment();
             ft.replace(R.id.content_main,fundingFragment,"funding");
             ft.commit();
-
         } else if (id == R.id.eventButton) {
-            EventFragment eventFragment = new EventFragment();
-            ft.replace(R.id.content_main, eventFragment,"events");
-            ft.commit();
-        } else if (id == R.id.semPlanButton) {
+            Intent intent = new Intent(this, EventActivity.class);
+            startActivity(intent);
+
+        }  else if (id == R.id.semPlanButton) {
             SemPlanFragment semPlanFragment = new SemPlanFragment();
             ft.replace(R.id.content_main,semPlanFragment, "semPlan");
             ft.commit();
@@ -329,9 +344,8 @@ public class MainActivity extends AppCompatActivity
             ft.commit();
         }
         else if(id == R.id.healthbutton){
-            HealthInsuranceFragment HFrag = new HealthInsuranceFragment();
-            ft.replace(R.id.content_main,HFrag,"Health Insurance");
-            ft.commit();
+            Intent intent = new Intent(this, HealthActivity.class);
+            startActivity(intent);
         }
 
 
@@ -344,4 +358,5 @@ public class MainActivity extends AppCompatActivity
     public void onFragmentInteraction(Uri uri) {
 
     }
+
 }
