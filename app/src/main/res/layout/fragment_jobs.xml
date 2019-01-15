@@ -26,6 +26,7 @@
 
 
         <TextView
+            android:id="@+id/how_much_work"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/how_much_work"
@@ -33,12 +34,14 @@
             android:textSize="22sp" />
 
         <TextView
+            android:id="@+id/rules"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/rules"
             android:textSize="16sp" />
 
         <TextView
+            android:id="@+id/eu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/eu"
@@ -46,6 +49,7 @@
             android:textSize="22sp" />
 
         <TextView
+            android:id="@+id/eu_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/eu_description"

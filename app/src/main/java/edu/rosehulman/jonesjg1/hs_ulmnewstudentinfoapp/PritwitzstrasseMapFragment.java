@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.github.chrisbanes.photoview.PhotoView;
+import com.github.chrisbanes.photoview.PhotoViewAttacher;
+
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
@@ -60,10 +63,19 @@ public class PritwitzstrasseMapFragment extends Fragment {
         }
     }
 
+    /** Initializes photoview attacher object to implement zooming in for the images.*/
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.prittwitzstrasse_map, container, false);
+        View rootView = inflater.inflate(R.layout.prittwitzstrasse_map, container,
+                false);
+
+        PhotoView map2 = rootView.findViewById(R.id.MapPW);
+        PhotoViewAttacher photoViewAttacher2 = new PhotoViewAttacher(map2);
+        photoViewAttacher2.setZoomable(true);
+        photoViewAttacher2.update();
+
+        return rootView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

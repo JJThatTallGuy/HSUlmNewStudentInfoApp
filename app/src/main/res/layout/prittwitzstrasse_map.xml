@@ -2,18 +2,12 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/Pritwasse_map"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
+    <com.github.chrisbanes.photoview.PhotoView
         android:id="@+id/MapPW"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:contentDescription="@string/app_name"
-        android:scaleType="fitCenter"
-        app:srcCompat="@mipmap/standorte_lageplan_pr" />
+        android:src="@mipmap/standorte_lageplan_pr" />
 </RelativeLayout>
