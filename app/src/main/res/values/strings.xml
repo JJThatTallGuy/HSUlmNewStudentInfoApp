@@ -119,7 +119,6 @@
     <string name="basicHealth">"All students in Germany need health insurance. The following link has more information: https://www.uni-ulm.de/en/io/degree-phd/welcome/authorities-and-insurances/health-insurance/"</string>
     <string name="eventIntro"> Hochschule Ulm provides a number of different events and activities to newcomers. All events and activities are available in Ulm, ensure that your time in Ulm will be productive as well as exciting. </string>
     <string name="eventHeader"> Events</string>
-    <string name="eventIntro"> Hochschule Ulm provides a number of different events and activities to newcomers. All events and activities are available in Ulm, ensure that your time in Ulm will be productive as well as exciting. </string>
 
     <string-array name="header_titles">
         <item> Recreational Activities</item>
@@ -267,10 +266,6 @@
             3. Name: Al-Salam \n
                Language: arabisch \n
                Location: NeuStrasse 3, 89077 Ulm \n
-    </item>
-        <item>
-
-
     </item>
         <item>
             Temples: \n

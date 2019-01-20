@@ -4,9 +4,19 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserFactory;
+
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
 
 
 /**
@@ -63,9 +73,35 @@ public class cityLawsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_city_laws, container, false);
+        String queryString = "http://pastebin.com/raw/3NF26n1z";
+        try {
+            URL url = new URL(queryString);
+            URLConnection urlConnection = url.openConnection();
+            InputStream is = urlConnection.getInputStream();
+            XmlPullParser parser = XmlPullParserFactory.newInstance().newPullParser();
+            parser.setInput(is, urlConnection.getContentEncoding());
+            int eventType = parser.getEventType();
+            while(eventType != XmlPullParser.END_DOCUMENT){
+                if (eventType == XmlPullParser.START_TAG && "city_laws".equals(parser.getName())){
+                    String s = parser.getAttributeValue(null, "text");
+                    TextView cityLaws = rootView.findViewById(R.id.cityLaws);
+                    s = s.replace("\\bre", "</br>");
+                    s = s.replace("\\br", "<br>");
+                    s = s.replace("\\n", "<br />");
+                    cityLaws.setText(Html.fromHtml(s));
+                }
+                eventType = parser.next();
+            }
+
+        } catch (Exception ex){
+            Log.e("Laws", "Can't query Pastebin");
+            ex.printStackTrace();
+        }
+
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_city_laws, container, false);
-    }
+        return rootView;    }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {

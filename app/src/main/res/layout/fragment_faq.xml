@@ -19,7 +19,7 @@
 
 
         <TextView
-
+            android:id="@+id/Q1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Q1"
@@ -28,6 +28,7 @@
             android:textSize="16sp" />
 
         <TextView
+            android:id="@+id/A1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/A1"
@@ -36,7 +37,7 @@
 
 
         <TextView
-
+            android:id="@+id/Q2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Q2"
@@ -46,13 +47,14 @@
 
 
         <TextView
+            android:id="@+id/A2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/A2"
             android:autoLink="web"
             android:textSize="16sp"/>
         <TextView
-
+            android:id="@+id/Q3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Q3"
@@ -62,13 +64,14 @@
 
 
         <TextView
+            android:id="@+id/A3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/A3"
             android:autoLink="web"
             android:textSize="16sp" />
         <TextView
-
+            android:id="@+id/Q4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Q4"
@@ -78,13 +81,14 @@
 
 
         <TextView
+            android:id="@+id/A4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/A4"
             android:autoLink="web"
             android:textSize="16sp" />
         <TextView
-
+            android:id="@+id/Q5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Q5"
@@ -94,13 +98,14 @@
 
 
         <TextView
+            android:id="@+id/A5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/A5"
             android:autoLink="web"
             android:textSize="16sp" />
         <TextView
-
+            android:id="@+id/Q6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Q6"
@@ -110,6 +115,7 @@
 
 
         <TextView
+            android:id="@+id/A6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/A6"
@@ -117,7 +123,7 @@
             android:textSize="16sp" />
 
         <TextView
-
+            android:id="@+id/Q8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Q8"
@@ -127,13 +133,14 @@
 
 
         <TextView
+            android:id="@+id/A8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/A8"
             android:autoLink="web"
             android:textSize="16sp" />
         <TextView
-
+            android:id="@+id/Q9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Q9"
@@ -143,13 +150,14 @@
 
 
         <TextView
+            android:id="@+id/A9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/A9"
             android:autoLink="web"
             android:textSize="16sp" />
         <TextView
-
+            android:id="@+id/Q10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Q10"
@@ -159,13 +167,14 @@
 
 
         <TextView
+            android:id="@+id/A10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/A10"
             android:autoLink="web"
             android:textSize="16sp" />
         <TextView
-
+            android:id="@+id/Q11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Q11"
@@ -175,6 +184,7 @@
 
 
         <TextView
+            android:id="@+id/A11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/A11"
@@ -182,7 +192,7 @@
             android:textSize="16sp" />
 
         <TextView
-
+            android:id="@+id/Q12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Q12"
@@ -192,13 +202,14 @@
 
 
         <TextView
+            android:id="@+id/A12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/A12"
             android:autoLink="web"
             android:textSize="16sp" />
         <TextView
-
+            android:id="@+id/Q13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Q13"
@@ -208,6 +219,7 @@
 
 
         <TextView
+            android:id="@+id/A13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/A13"
@@ -215,7 +227,7 @@
             android:textSize="16sp" />
 
         <TextView
-
+            android:id="@+id/Q14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Q14"
@@ -225,6 +237,7 @@
 
 
         <TextView
+            android:id="@+id/A14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/A14"
@@ -232,7 +245,7 @@
             android:textSize="16sp" />
 
         <TextView
-
+            android:id="@+id/Q15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Q15"
@@ -242,13 +255,14 @@
 
 
         <TextView
+            android:id="@+id/A15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/A15"
             android:autoLink="web"
             android:textSize="16sp" />
         <TextView
-
+            android:id="@+id/Q16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Q16"
@@ -258,6 +272,7 @@
 
 
         <TextView
+            android:id="@+id/A16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/A16"
@@ -265,7 +280,7 @@
             android:textSize="16sp" />
 
         <TextView
-
+            android:id="@+id/Q17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Q17"
@@ -275,6 +290,7 @@
 
 
         <TextView
+            android:id="@+id/A17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/A17"

@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.github.chrisbanes.photoview.PhotoView;
+import com.github.chrisbanes.photoview.PhotoViewAttacher;
+
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
@@ -63,7 +66,15 @@ public class EberhardstrasseMapFragmnet extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.eberhardstrasse_map,container,false);
+        View rootView = inflater.inflate(R.layout.eberhardstrasse_map, container,
+                false);
+
+        PhotoView map1 = rootView.findViewById(R.id.MapEB);
+        PhotoViewAttacher photoViewAttacher = new PhotoViewAttacher(map1);
+        photoViewAttacher.setZoomable(true);
+        photoViewAttacher.update();
+
+        return rootView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

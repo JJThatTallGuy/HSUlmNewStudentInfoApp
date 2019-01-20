@@ -4,9 +4,19 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserFactory;
+
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
 
 
 /**
@@ -63,9 +73,108 @@ public class transportFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_transport, container, false);
+        String queryString = "http://pastebin.com/raw/3NF26n1z";
+        try {
+            URL url = new URL(queryString);
+            URLConnection urlConnection = url.openConnection();
+            InputStream is = urlConnection.getInputStream();
+            XmlPullParser parser = XmlPullParserFactory.newInstance().newPullParser();
+            parser.setInput(is, urlConnection.getContentEncoding());
+            int eventType = parser.getEventType();
+            while(eventType != XmlPullParser.END_DOCUMENT){
+                if (eventType == XmlPullParser.START_TAG && "transport_connections".equals(parser.getName())){
+                    String s = parser.getAttributeValue(null, "text");
+                    TextView transportConnections = rootView.findViewById(R.id.transportConnections);
+                    s = s.replace("\\bre", "</br>");
+                    s = s.replace("\\br", "<br>");
+                    s = s.replace("\\n", "<br />");
+                    transportConnections.setText(Html.fromHtml(s));
+                }
+                else if (eventType == XmlPullParser.START_TAG && "transport_connections_descriptions".equals(parser.getName())){
+                    String s = parser.getAttributeValue(null, "text");
+                    TextView transportConnectionsDescriptions = rootView.findViewById(R.id.transportConnectionsDescriptions);
+                    s = s.replace("\\bre", "</br>");
+                    s = s.replace("\\br", "<br>");
+                    s = s.replace("\\n", "<br />");
+                    transportConnectionsDescriptions.setText(Html.fromHtml(s));
+                }
+                else if (eventType == XmlPullParser.START_TAG && "semester_ticket".equals(parser.getName())){
+                    String s = parser.getAttributeValue(null, "text");
+                    TextView semesterTicket = rootView.findViewById(R.id.semesterTicket);
+                    s = s.replace("\\bre", "</br>");
+                    s = s.replace("\\br", "<br>");
+                    s = s.replace("\\n", "<br />");
+                    semesterTicket.setText(Html.fromHtml(s));
+                }
+                else if (eventType == XmlPullParser.START_TAG && "semester_ticket_link".equals(parser.getName())){
+                    String s = parser.getAttributeValue(null, "text");
+                    TextView semesterTicketLink = rootView.findViewById(R.id.semesterTicketLink);
+                    s = s.replace("\\bre", "</br>");
+                    s = s.replace("\\br", "<br>");
+                    s = s.replace("\\n", "<br />");
+                    semesterTicketLink.setText(Html.fromHtml(s));
+                }
+                else if (eventType == XmlPullParser.START_TAG && "ding1".equals(parser.getName())){
+                    String s = parser.getAttributeValue(null, "text");
+                    TextView ding_1 = rootView.findViewById(R.id.ding_1);
+                    s = s.replace("\\bre", "</br>");
+                    s = s.replace("\\br", "<br>");
+                    s = s.replace("\\n", "<br />");
+                    ding_1.setText(Html.fromHtml(s));
+                }
+                else if (eventType == XmlPullParser.START_TAG && "ding_link1".equals(parser.getName())){
+                    String s = parser.getAttributeValue(null, "text");
+                    TextView dingLink1 = rootView.findViewById(R.id.dingLink1);
+                    s = s.replace("\\bre", "</br>");
+                    s = s.replace("\\br", "<br>");
+                    s = s.replace("\\n", "<br />");
+                    dingLink1.setText(Html.fromHtml(s));
+                }
+                else if (eventType == XmlPullParser.START_TAG && "ding2".equals(parser.getName())){
+                    String s = parser.getAttributeValue(null, "text");
+                    TextView ding2 = rootView.findViewById(R.id.ding2);
+                    s = s.replace("\\bre", "</br>");
+                    s = s.replace("\\br", "<br>");
+                    s = s.replace("\\n", "<br />");
+                    ding2.setText(Html.fromHtml(s));
+                }
+                else if (eventType == XmlPullParser.START_TAG && "ding_link2".equals(parser.getName())){
+                    String s = parser.getAttributeValue(null, "text");
+                    TextView dingLink2 = rootView.findViewById(R.id.dingLink2);
+                    s = s.replace("\\bre", "</br>");
+                    s = s.replace("\\br", "<br>");
+                    s = s.replace("\\n", "<br />");
+                    dingLink2.setText(Html.fromHtml(s));
+                }
+                else if (eventType == XmlPullParser.START_TAG && "ding_link3".equals(parser.getName())){
+                    String s = parser.getAttributeValue(null, "text");
+                    TextView dingLink3 = rootView.findViewById(R.id.dingLink3);
+                    s = s.replace("\\bre", "</br>");
+                    s = s.replace("\\br", "<br>");
+                    s = s.replace("\\n", "<br />");
+                    dingLink3.setText(Html.fromHtml(s));
+                }
+                else if (eventType == XmlPullParser.START_TAG && "ding_link4".equals(parser.getName())){
+                    String s = parser.getAttributeValue(null, "text");
+                    TextView dingLink4 = rootView.findViewById(R.id.dingLink4);
+                    s = s.replace("\\bre", "</br>");
+                    s = s.replace("\\br", "<br>");
+                    s = s.replace("\\n", "<br />");
+                    dingLink4.setText(Html.fromHtml(s));
+                }
+
+                eventType = parser.next();
+            }
+
+        } catch (Exception ex){
+            Log.e("Transport", "Can't query Pastebin");
+            ex.printStackTrace();
+        }
+
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_transport, container, false);
-    }
+        return rootView;    }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
