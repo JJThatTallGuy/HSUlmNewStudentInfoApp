@@ -63,7 +63,7 @@ public class EinsteinMapFragment extends Fragment {
         }
     }
 
-    @Override
+    /**Used PhotoViewAttacher to enable zooming in for the map.*/
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.albert_einstein_allee_map, container,

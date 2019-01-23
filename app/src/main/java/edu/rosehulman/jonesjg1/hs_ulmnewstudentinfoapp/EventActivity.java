@@ -20,7 +20,7 @@ import java.util.List;
 
 public class EventActivity extends AppCompatActivity {
     ExpandableListView expandableListView;
-    @Override
+    /**This class implements a drop down menu.*/
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event);

@@ -166,7 +166,10 @@ public class MessagingFragment extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
-private class MessageChildEventListener implements ChildEventListener {
+    /**
+     * listens for firebase to database to change data and then updateds the adapter accordingly
+     */
+    private class MessageChildEventListener implements ChildEventListener {
 
     @Override
     public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {

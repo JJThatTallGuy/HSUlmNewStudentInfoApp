@@ -23,11 +23,17 @@ class MessageAdapter (val context: Context) : RecyclerView.Adapter<MessageViewHo
 
     }
 
+    /**
+     * returns the number of items currently in the adapter
+     */
     override fun getItemCount(): Int {
         Log.d("count",messages.size.toString());
         return messages.size
     }
 
+    /**
+     * divides the adapter messages into two categries, sent and recieved
+     */
     override fun getItemViewType(position: Int): Int {
         val message = messages.get(position)
 
@@ -53,6 +59,9 @@ class MessageAdapter (val context: Context) : RecyclerView.Adapter<MessageViewHo
         holder?.bind(message)
     }
 
+    /**
+     * binds the info from the object to the view
+     */
     inner class MyMessageViewHolder (view: View) : MessageViewHolder(view) {
         private var messageText: TextView = view.txtMyMessage
         private var timeText: TextView = view.txtMyMessageTime

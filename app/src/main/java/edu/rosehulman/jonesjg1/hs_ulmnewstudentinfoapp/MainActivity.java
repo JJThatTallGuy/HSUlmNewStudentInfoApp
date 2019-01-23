@@ -122,6 +122,11 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    /**
+     * Uses an async task to load a bitmap of the users profile picture.
+     * @param src
+     * @return
+     */
     public static Bitmap getBitmapFromURL(String src) {
         try {
             URL url = new URL(src);
@@ -137,6 +142,10 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    /**
+     * sets up the firebase auth for login used in Login Fragment
+     * @param acct
+     */
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
         Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
 
@@ -162,6 +171,13 @@ public class MainActivity extends AppCompatActivity
                     }
                 });
     }
+
+    /**
+     * Waits for login result, and if successfull mves the app to the messaging fragment
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -185,7 +201,7 @@ public class MainActivity extends AppCompatActivity
             }
         }
     }
-    @Override
+    /**Check is user is signed in and update UI accordingly*/
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
@@ -194,10 +210,18 @@ public class MainActivity extends AppCompatActivity
         setText();
         //updateUI(currentUser);
     }
+
+    /**
+     * returns a google account used for retrieving info such as the users display name.
+     * @return
+     */
     public GoogleSignInAccount getGoogleAccount(){
         return this.maccount;
     }
 
+    /**
+     * sets the users info for the menu in the Main Activity
+     */
     public void setText(){
         if(maccount!=null){
             musername.setText(maccount.getDisplayName());
@@ -210,6 +234,9 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    /**
+     * uses the google sign in client ot sign the user out.
+     */
     public void signOut() {
         // Firebase sign out
         mAuth.signOut();
@@ -226,7 +253,9 @@ public class MainActivity extends AppCompatActivity
         setText();
     }
 
-
+    /**
+     * signs in the user by starting the google sign in intent
+     */
     public void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
@@ -260,8 +289,13 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Takes the option selected in the menu and transitions to the corresponding fragment
+     * @param item
+     * @return
+     */
     @SuppressWarnings("StatementWithEmptyBody")
-    @Override
+    /**Handles navigation item clicks here.*/
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         FragmentTransaction ft = getFragmentManager().beginTransaction();
