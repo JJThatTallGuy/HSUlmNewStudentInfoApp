@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -45,7 +47,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class MainActivity extends AppCompatActivity
-        implements HealthInsuranceFragment.OnFragmentInteractionListener,EberhardstrasseMapFragmnet.OnFragmentInteractionListener,EinsteinMapFragment.OnFragmentInteractionListener,PritwitzstrasseMapFragment.OnFragmentInteractionListener,fundingFragment.OnFragmentInteractionListener,cityLawsFragment.OnFragmentInteractionListener,JobsFragment.OnFragmentInteractionListener,transportFragment.OnFragmentInteractionListener, ProfileFragment.OnFragmentInteractionListener,NavigationView.OnNavigationItemSelectedListener,LoginFragment.OnFragmentInteractionListener ,MessagingFragment.OnFragmentInteractionListener{
+        implements MessagingFragment.OnFragmentInteractionListener, HealthInsuranceFragment.OnFragmentInteractionListener,EberhardstrasseMapFragmnet.OnFragmentInteractionListener,EinsteinMapFragment.OnFragmentInteractionListener,PritwitzstrasseMapFragment.OnFragmentInteractionListener,fundingFragment.OnFragmentInteractionListener,cityLawsFragment.OnFragmentInteractionListener,JobsFragment.OnFragmentInteractionListener,transportFragment.OnFragmentInteractionListener, ProfileFragment.OnFragmentInteractionListener,NavigationView.OnNavigationItemSelectedListener,LoginFragment.OnFragmentInteractionListener{
 
     private GoogleSignInAccount maccount;
     private FirebaseAuth mAuth;
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity
     private LoginFragment.OnFragmentInteractionListener mListener;
     private TextView memail;
     private TextView musername;
+    private ImageView mProfilePic;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,26 +90,29 @@ public class MainActivity extends AppCompatActivity
         musername = header.findViewById(R.id.username);
 
         memail = header.findViewById(R.id.email);
-        ImageView ProfilePic = header.findViewById(R.id.profilepic);
+        mProfilePic = header.findViewById(R.id.profilepic);
         setText();
-
-        ProfilePic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ProfileFragment profilefrag = new ProfileFragment();
-                ft.replace(R.id.content_main, profilefrag , "profile");
-                ft.commit();
-                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-                drawer.closeDrawer(GravityCompat.START);
-            }
-        });
-
+        musername.setOnClickListener(new goToProfile());
+        memail.setOnClickListener(new goToProfile());
+        mProfilePic.setOnClickListener(new goToProfile());
 
 
         navigationView.setNavigationItemSelectedListener(this);
     }
 
+    public class goToProfile implements View.OnClickListener {
+
+        @Override
+        public void onClick(View v) {
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ProfileFragment profilefrag = new ProfileFragment();
+            ft.replace(R.id.content_main, profilefrag , "profile");
+            ft.commit();
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
+        }
+
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -117,18 +123,35 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    public static Bitmap getBitmapFromURL(String src) {
-        try {
-            URL url = new URL(src);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setDoInput(true);
-            connection.connect();
-            InputStream input = connection.getInputStream();
-            Bitmap myBitmap = BitmapFactory.decodeStream(input);
-            return myBitmap;
-        } catch (IOException e) {
-            // Log exception
-            return null;
+    public GoogleSignInAccount getaccount(){
+        return maccount;
+    }
+
+    class getBitmapFromURL extends AsyncTask<String, Void, Bitmap>
+
+    {
+
+        @Override
+        protected Bitmap doInBackground(String... strings) {
+            try {
+                URL url = new URL(strings[0]);
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                connection.setDoInput(true);
+                connection.connect();
+                InputStream input = connection.getInputStream();
+                Bitmap myBitmap = BitmapFactory.decodeStream(input);
+                return myBitmap;
+            } catch (IOException e) {
+                // Log exception
+                return null;
+            }
+
+        }
+
+        @Override
+        protected void onPostExecute(Bitmap bitmap) {
+            super.onPostExecute(bitmap);
+            mProfilePic.setImageBitmap(bitmap);
         }
     }
 
@@ -169,9 +192,9 @@ public class MainActivity extends AppCompatActivity
                 maccount = task.getResult(ApiException.class);
                 setText();
                 firebaseAuthWithGoogle(maccount);
-                MessagingFragment messagingFragment = new MessagingFragment();
+
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.content_main, messagingFragment , "messaging");
+
                 ft.commit();
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
@@ -194,14 +217,24 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void setText(){
-        if(maccount!=null){
+        if(maccount!=null) {
+            musername.setVisibility(View.VISIBLE);
+            memail.setVisibility(View.VISIBLE);
+            mProfilePic.setVisibility(View.VISIBLE);
             musername.setText(maccount.getDisplayName());
             memail.setText(maccount.getEmail());
-//            ProfilePic.setImageBitmap(getBitmapFromURL(account.getPhotoUrl().toString()));
+            (new getBitmapFromURL()).execute(maccount.getPhotoUrl().toString());
+//            mProfilePic.setImageURI(maccount.getPhotoUrl());
+            Log.d("TAG", maccount.getPhotoUrl().toString());
         }
+
         else{
             musername.setText("NULL");
             memail.setText("NULL");
+            mProfilePic.setVisibility(View.GONE);
+            musername.setVisibility(View.GONE);
+            memail.setVisibility(View.GONE);
+            mProfilePic.setVisibility(View.GONE);
         }
     }
 

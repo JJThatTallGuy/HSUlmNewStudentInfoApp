@@ -4,11 +4,27 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Adapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
-import com.google.firebase.iid.FirebaseInstanceIdService;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Calendar;
 
 
 /**
@@ -28,7 +44,9 @@ public class MessagingFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private DatabaseReference mref;
+    public MessageAdapter messageAdapter;
+    private EditText textMessage;
     private OnFragmentInteractionListener mListener;
 
     public MessagingFragment() {
@@ -66,7 +84,39 @@ public class MessagingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_messaging, container, false);
+
+        final String Username = ((MainActivity) getActivity()).getaccount().getDisplayName();
+        final String id = ((MainActivity) getActivity()).getaccount().getId();
+        App.id = id;
+        View view = inflater.inflate(R.layout.activity_chat, container, false);
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.messageList);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        messageAdapter =  new MessageAdapter(getContext());
+        recyclerView.setAdapter(messageAdapter);
+
+        mref = FirebaseDatabase.getInstance().getReference().child("Messages");
+        mref.addChildEventListener(new MessageChildEventListener());
+        Button btnSend = view.findViewById(R.id.btnSend);
+        textMessage = view.findViewById(R.id.txtMessage);
+        btnSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!textMessage.toString().isEmpty()){
+                    Log.d("MESSAGE","SENT");
+                    mref.push().setValue(new Message(id,Username,textMessage.getText().toString(),Calendar.getInstance().getTimeInMillis()));
+                    resetInput();
+
+                }
+                else{
+                    Toast.makeText(getContext(),"Message should not be empty", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+        return view;
+
+
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -75,6 +125,13 @@ public class MessagingFragment extends Fragment {
             mListener.onFragmentInteraction(uri);
         }
     }
+
+    private void resetInput() {
+        textMessage.getText().clear();
+        InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(textMessage.getWindowToken(),0);
+    }
+
 
     @Override
     public void onAttach(Context context) {
@@ -107,4 +164,34 @@ public class MessagingFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+private class MessageChildEventListener implements ChildEventListener {
+
+    @Override
+    public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+        Message message = dataSnapshot.getValue(Message.class);
+        Log.d("TAG","added");
+        messageAdapter.addMessage(message);
+    }
+
+    @Override
+    public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+    }
+
+    @Override
+    public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+    }
+
+    @Override
+    public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+    }
+
+    @Override
+    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+    }
+}
 }
