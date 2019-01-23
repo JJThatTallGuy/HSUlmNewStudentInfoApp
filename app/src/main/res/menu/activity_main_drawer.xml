@@ -21,6 +21,18 @@
         <item
             android:id="@+id/healthbutton"
             android:title="Health Insurance"/>
+        <item
+            android:id="@+id/eventButton"
+            android:title="Events"/>
+        <item
+            android:id="@+id/semPlanButton"
+            android:title="Semester Plan"/>
+        <item
+            android:id="@+id/faqbutton"
+            android:title="FAQ"/>
+        <item
+            android:id="@+id/hostelbutton"
+            android:title="Hostel"/>
     </group>
 
     <item android:title="Communicate">

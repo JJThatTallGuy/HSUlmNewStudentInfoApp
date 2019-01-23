@@ -22,12 +22,12 @@ import java.net.URLConnection;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link cityLawsFragment.OnFragmentInteractionListener} interface
+ * {@link HostelFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link cityLawsFragment#newInstance} factory method to
+ * Use the {@link HostelFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class cityLawsFragment extends Fragment {
+public class HostelFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -39,7 +39,7 @@ public class cityLawsFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public cityLawsFragment() {
+    public HostelFragment() {
         // Required empty public constructor
     }
 
@@ -49,11 +49,11 @@ public class cityLawsFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment cityLawsFragment.
+     * @return A new instance of fragment HostelFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static cityLawsFragment newInstance(String param1, String param2) {
-        cityLawsFragment fragment = new cityLawsFragment();
+    public static HostelFragment newInstance(String param1, String param2) {
+        HostelFragment fragment = new HostelFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -73,7 +73,7 @@ public class cityLawsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_city_laws, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_hostel, container, false);
         String queryString = "http://pastebin.com/raw/3NF26n1z";
         try {
             URL url = new URL(queryString);
@@ -83,21 +83,24 @@ public class cityLawsFragment extends Fragment {
             parser.setInput(is, urlConnection.getContentEncoding());
             int eventType = parser.getEventType();
             while(eventType != XmlPullParser.END_DOCUMENT){
-                if (eventType == XmlPullParser.START_TAG && "city_laws".equals(parser.getName())){
+                if (eventType == XmlPullParser.START_TAG && "A18".equals(parser.getName())){
                     String s = parser.getAttributeValue(null, "text");
-                    TextView cityLaws = rootView.findViewById(R.id.cityLaws);
+                    TextView BasicInfo = rootView.findViewById(R.id.BasicInfo);
                     s = s.replace("\\bre", "</br>");
                     s = s.replace("\\br", "<br>");
                     s = s.replace("\\n", "<br />");
-                    cityLaws.setText(Html.fromHtml(s));
+                    BasicInfo.setText(Html.fromHtml(s));
                 }
+
                 eventType = parser.next();
             }
 
         } catch (Exception ex){
-            Log.e("Laws", "Can't query Pastebin");
+            Log.e("Hostel", "Can't query Pastebin");
             ex.printStackTrace();
         }
+
+
 
 
         // Inflate the layout for this fragment
