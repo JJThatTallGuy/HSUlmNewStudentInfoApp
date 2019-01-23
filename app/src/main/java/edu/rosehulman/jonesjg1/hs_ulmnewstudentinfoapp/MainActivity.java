@@ -291,9 +291,9 @@ public class MainActivity extends AppCompatActivity
 
 
 
-        } else if (id == R.id.nav_share) {
+        }
 
-        } else if (id == R.id.lawsbutton) {
+         else if (id == R.id.lawsbutton) {
             cityLawsFragment cityLawsFragment = new cityLawsFragment();
             ft.replace(R.id.content_main, cityLawsFragment, "city laws");
             ft.commit();
