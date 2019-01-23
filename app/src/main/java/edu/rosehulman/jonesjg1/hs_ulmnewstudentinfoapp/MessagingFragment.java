@@ -47,6 +47,7 @@ public class MessagingFragment extends Fragment {
     private DatabaseReference mref;
     public MessageAdapter messageAdapter;
     private EditText textMessage;
+    public RecyclerView recyclerView;
     private OnFragmentInteractionListener mListener;
 
     public MessagingFragment() {
@@ -89,7 +90,7 @@ public class MessagingFragment extends Fragment {
         final String id = ((MainActivity) getActivity()).getaccount().getId();
         App.id = id;
         View view = inflater.inflate(R.layout.activity_chat, container, false);
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.messageList);
+        recyclerView = (RecyclerView) view.findViewById(R.id.messageList);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         messageAdapter =  new MessageAdapter(getContext());
         recyclerView.setAdapter(messageAdapter);
@@ -105,7 +106,7 @@ public class MessagingFragment extends Fragment {
                     Log.d("MESSAGE","SENT");
                     mref.push().setValue(new Message(id,Username,textMessage.getText().toString(),Calendar.getInstance().getTimeInMillis()));
                     resetInput();
-
+                    recyclerView.scrollToPosition(0);
                 }
                 else{
                     Toast.makeText(getContext(),"Message should not be empty", Toast.LENGTH_SHORT).show();
@@ -172,6 +173,7 @@ private class MessageChildEventListener implements ChildEventListener {
         Message message = dataSnapshot.getValue(Message.class);
         Log.d("TAG","added");
         messageAdapter.addMessage(message);
+        recyclerView.scrollToPosition(messageAdapter.getItemCount()-1);
     }
 
     @Override

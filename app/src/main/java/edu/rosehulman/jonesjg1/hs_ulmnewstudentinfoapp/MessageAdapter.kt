@@ -20,6 +20,7 @@ class MessageAdapter (val context: Context) : RecyclerView.Adapter<MessageViewHo
     fun addMessage(message: Message){
         messages.add(message)
         notifyDataSetChanged()
+
     }
 
     override fun getItemCount(): Int {
